@@ -1,0 +1,155 @@
+<div class="container" fxLayout="row">
+  <div fxFlex="20">
+    <div class="sidenav">
+      <div class="sidebar-wrapper">
+        <div class="head">Filters</div>
+        <mat-divider></mat-divider>
+        <div class="sub-head">ACCURACY</div>
+        <div class="wrapper-checkbox">
+          <mat-checkbox > 0<30 </mat-checkbox>
+          <br />
+          <mat-checkbox> 30<60 </mat-checkbox>
+          <br />
+          <mat-checkbox> 60<100 </mat-checkbox>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="sub-head">DATA SIZE</div>
+        <div class="wrapper-checkbox">
+          <mat-checkbox> 100 MB<30 </mat-checkbox>
+          <br />
+          <mat-checkbox> 100 MB - 500 MB </mat-checkbox>
+          <br />
+          <mat-checkbox> 500 MB - 1 GB</mat-checkbox>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="sub-head">DATA TYPE</div>
+        <div class="wrapper-checkbox">
+          <mat-checkbox>CSV<30 </mat-checkbox>
+          <br />
+          <mat-checkbox>JSON </mat-checkbox>
+          <br />
+          <mat-checkbox>IMAGES<100 </mat-checkbox>
+        </div>
+        <mat-divider></mat-divider>
+        <div class="sub-head">ALGORITHM</div>
+        <div class="wrapper-checkbox">
+          <mat-checkbox>Linear Reg.<30 </mat-checkbox>
+          <br />
+          <mat-checkbox>Logistic Reg. </mat-checkbox>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <div class ='cardContent'  fxFlex='80' fxLayout='column'>
+      <div *ngFor='let i of (filteredData | filterArray)' >
+        {{i.problem_name}}
+        {{i.dataset_accuracy}}
+        {{i.dataset_size}}
+        {{i.data_type}}
+        {{i.description}}
+      </div>
+      </div> -->
+
+      <!-- <app-header></app-header> -->
+
+  <div fxFlex fxLayout="row wrap" fxLayoutGap='15px'>
+      <div *ngFor='let i of datasets'>
+    <div class="cardItem" fxLayout="row" fxLayout.xs="column">
+      <div fxFlex="37%">
+        <img
+          class="imageIcon"
+          src="../../../assets/images/medium_profile.jpg"
+        />
+      </div>
+      <div fxLayout="column" fxFlex="60%">
+        <div fxLayout="row" fxLayoutAlign="start start" fxFlex="40%">
+          <span class="name">{{i.problem_name}}</span>
+          <div class="icon" fxLayoutAlign="end end">
+            <mat-icon>more_vert</mat-icon>
+          </div>
+          <h1>{{i.id}}</h1>
+
+        </div>
+        <div fxLayout="row" fxFlex="30%">
+          <mat-icon class="info">tune</mat-icon>
+          <span class="type">{{i.dataset_file_type}}</span>
+        </div>
+        <div fxLayout="row" fxFlex="30%">
+          <i class="material-icons nfc">
+            nfc
+          </i>
+          <span class="count">{{i.dataset_accuracy}}</span>
+          <div class="run">
+            <span class="runtext" fxLayoutAlign="center center">Run</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- <div fxFlex fxLayout="row">
+    <div class="cardItem" fxLayout="row wrap" fxLayout.xs="column wrap">
+      <div fxFlex="37%">
+        <img
+          class="imageIcon"
+          src="../../../assets/images/medium_profile.jpg"
+        />
+      </div>
+      <div fxLayout="column" fxFlex="60%">
+        <div fxLayout="row" fxLayoutAlign="start start" fxFlex="40%">
+          <span class="name">Nikhil Lad</span>
+          <div class="icon" fxLayoutAlign="end end">
+            <mat-icon>more_vert</mat-icon>
+          </div>
+        </div>
+        <div fxLayout="row" fxFlex="30%">
+          <mat-icon class="info">tune</mat-icon>
+          <span class="type">Algorithm</span>
+        </div>
+        <div fxLayout="row" fxFlex="30%">
+          <i class="material-icons nfc">
+            nfc
+          </i>
+          <span class="count">5</span>
+          <div class="run">
+            <span class="runtext" fxLayoutAlign="center center">Run</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div fxFlex fxLayout="row">
+    <div class="cardItem" fxLayout="row">
+      <div fxFlex="37%">
+        <img
+          class="imageIcon"
+          src="../../../assets/images/medium_profile.jpg"
+        />
+      </div>
+      <div fxLayout="column" fxFlex="60%">
+        <div fxLayout="row" fxLayoutAlign="start start" fxFlex="40%">
+          <span class="name">pushkar Ishware</span>
+          <div class="icon" fxLayoutAlign="end end">
+            <mat-icon>more_vert</mat-icon>
+          </div>
+        </div>
+        <div fxLayout="row" fxFlex="30%">
+          <mat-icon class="info">tune</mat-icon>
+          <span class="type">Algorithm</span>
+        </div>
+        <div fxLayout="row" fxFlex="30%">
+          <i class="material-icons nfc">
+            nfc
+          </i>
+          <span class="count">10</span>
+          <div class="run">
+            <span class="runtext" fxLayoutAlign="center center">Run</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> -->
+</div>

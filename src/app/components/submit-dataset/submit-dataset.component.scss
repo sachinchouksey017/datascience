@@ -1,0 +1,47 @@
+#extra{
+  visibility: hidden;
+}
+.submit-button{
+  border-radius: 6px;
+  background-color: #2851a3;
+  color: aliceblue;
+  height: 35px;
+  width: 155px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+::ng-deep .mat-form-field-appearance-outline {
+  transform: translateY(-0em) scale(0.9);
+}
+
+::ng-deep .mat-form-field{
+  width: 600px;
+}
+.cotainer{
+  padding: 4%;
+  font-family: 'Poppins';
+}
+#head{
+  padding-bottom: 2%;
+}
+.heading{
+  font-size: 18px;
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: left;
+  color: #3f435e;
+}
+.about{
+  padding-left: 2.4%;
+}
+.form-wrapper{
+  padding-top: 4%;
+}
+.submitRow{
+  padding-right: 2.7%;
+}

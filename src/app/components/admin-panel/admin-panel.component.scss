@@ -1,0 +1,127 @@
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    // top: 0;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  @media screen and (max-height: 450px) {
+    .sidenav {
+      padding-top: 15px;
+    }
+    .sidenav a {
+      font-size: 18px;
+    }
+  }
+  .head {
+    color: #292a2d;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    padding-left: 20%;
+  }
+  .sub-head {
+    font-weight: 500;
+    color: #292a2d;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    padding: 4% 0% 4% 0%;
+    padding-left: 20%;
+  }
+  
+  .sidebar-wrapper {
+    font-family: 'Poppins';
+  }
+  .wrapper-checkbox {
+    color: #706f73;
+    line-height: 1.5;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    padding: 2% 0% 4% 0%;
+    padding-left: 20%;
+  }
+  
+  // css for cards
+  .cardItem {
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 115px;
+    border-radius: 2px;
+    .imageIcon {
+      width: 90px;
+      height: 90px;
+      border-radius: 7px;
+      background-color: #000000;
+      margin: 11px;
+    }
+    .name {
+      width: 85%;
+      height: 43px;
+      margin: 5px;
+      font-family: Poppins;
+      font-size: 16px;
+      line-height: 1.25;
+      color: #292a2d;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+    ::ng-deep .mat-icon {
+      background-repeat: no-repeat;
+      display: inline-block;
+      fill: currentColor;
+      height: 24px;
+      width: 24px;
+      margin: 11px 0 5px 0;
+    }
+    ::ng-deep .info {
+      width: 18%;
+      margin-left: 10px;
+    }
+    .type {
+      width: 40%;
+      height: 15px;
+      font-family: Poppins;
+      font-size: 10px;
+      margin: 14px 2px;
+    }
+    /deep/ .nfc {
+      margin: 5px 10px 0px;
+    }
+    .count {
+      font-size: 10px;
+      font-family: poppins;
+      color: #706f73;
+      margin: 5px 10px 0px;
+    }
+    .run {
+      width: 48.7px;
+      height: 19.3px;
+      border-radius: 5px;
+      border: solid 1px #3ec042;
+      background-color: #ffffff;
+      float: left;
+      .runtext {
+        font-family: poppins;
+        font-size: 10px;
+        color: #3ec042;
+        text-align: center;
+      }
+    }
+  }
+  .container{
+    font-family: 'Poppins';
+  }
+  
