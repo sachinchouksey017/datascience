@@ -1,0 +1,163 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="example-toolbar" fxLayout='row' [class.mat-elevation-z8]="isActive">
+    <div fxLayout='row' fxFlex fxLayoutAlign="none center">
+      <div style='cursor: pointer' (click)="navigate()">
+        <img src='../../../assets/images/logo.png'>
+      </div>
+      <div fxFlexOffset='1.875em'>
+        <mat-form-field fxFlex='530px' fxFlex.md='280px' fxFlex.sm='200px' [style.font-size.px]="'13'"
+          appearance="outline" id='search-input'>
+          <input matInput>
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="heightFitContent">
+      <button mat-icon-button>
+        <mat-icon>power_settings_new
+        </mat-icon>
+      </button>
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" class="drawer" opened>
+      <mat-nav-list fxLayout='column' fxLayoutGap='5px'>
+        <a mat-list-item routerLink="." [ngClass]="selected == 'Description' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('Description')">
+          <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
+            <mat-icon class="icon">
+              computer
+            </mat-icon>
+            <div class="heightFitContent text" fxFlexOffset='16px'>
+              Description
+            </div>
+          </div>
+        </a>
+        <a mat-list-item routerLink="." [ngClass]="selected == 'Report' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('Report')">
+          <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
+            <mat-icon class="icon">
+              event_note
+            </mat-icon>
+            <div class="heightFitContent text" fxFlexOffset='16px'>
+              User Report
+            </div>
+          </div>
+        </a>
+        <a mat-list-item routerLink="." [ngClass]="selected == '5W1H' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('5W1H')">
+          <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
+            <mat-icon class="icon">
+              brightness_7
+            </mat-icon>
+            <div class="heightFitContent text" fxFlexOffset='16px'>
+              5W1H
+            </div>
+          </div>
+        </a>
+        <a mat-list-item routerLink="." [ngClass]="selected == 'Resources' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('Resources')">
+          <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
+            <mat-icon class="icon">
+              brightness_7
+            </mat-icon>
+            <div class="heightFitContent text" fxFlexOffset='16px'>
+              Resources
+            </div>
+          </div>
+        </a> <a mat-list-item routerLink="." [ngClass]="selected == 'Questions' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('Questions')">
+          <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
+            <mat-icon class="icon">
+              brightness_7
+            </mat-icon>
+            <div class="heightFitContent text" fxFlexOffset='16px'>
+              Interview Questions
+            </div>
+          </div>
+        </a> <a mat-list-item routerLink="." [ngClass]="selected == 'FAQ' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('FAQ')">
+          <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
+            <mat-icon class="icon">
+              brightness_7
+            </mat-icon>
+            <div class="heightFitContent text" fxFlexOffset='16px'>
+              FAQ
+            </div>
+          </div>
+        </a> <a mat-list-item routerLink="." [ngClass]="selected == 'Setting' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('Setting')">
+          <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
+            <mat-icon class="icon">
+              brightness_7
+            </mat-icon>
+            <div class="heightFitContent text" fxFlexOffset='16px'>
+              Setting
+            </div>
+          </div>
+        </a>
+        <!-- <a mat-list-item routerLink=".">{{nav}}</a>
+          <a mat-list-item routerLink=".">{{nav}}</a>
+          <a mat-list-item routerLink=".">{{nav}}</a>
+          <a mat-list-item routerLink=".">{{nav}}</a>
+          <a mat-list-item routerLink=".">{{nav}}</a> -->
+
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content" fxLayout='column'>
+      <div fxLayout="row wrap" fxLayoutGap='15px'>
+        <mat-card class="card" *ngFor='let i of [1,1,1,1]'>
+          <div fxLayout='column'>
+            <div fxLayout='row'>
+              <div>
+                <img class="userImage" src="../../../assets/images/medium_profile.jpg" alt="userImage">
+              </div>
+              <div fxFlex fxFlexOffset='9px' fxLayout='column' class="userBox">
+                <div>
+                  User name
+                </div>
+                <div fxFlexOffset='5px' fxLayout='row' fxLayoutAlign='none center'>
+                  <div fxLayout='column' class="stepper" fxLayoutAlign="space-between center">
+                    <div class="green">
+
+                    </div>
+                    <div class="blackLine">
+
+                    </div>
+                    <div class="red">
+
+                    </div>
+                  </div>
+                  <div fxLayout='column' fxFlexOffset='3px' fxLayoutAlign="space-between center">
+                    <div class="date">
+                      11 Jan 2019
+                    </div>
+                    <div class="date" fxFlexOffset='5px'>
+                      10 Mar 2019
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="count">
+                5
+
+              </div>
+            </div>
+            <div fxFlexOffset='10px' class="buttons" fxLayout='row' fxLayoutAlign='space-between center'>
+                  <button class="button" mat-stroked-button>
+                    <img style="max-height: 16px" src="../../../assets/icons/bill.png" alt="bills">
+                    Bill</button>
+                  <button class="button" mat-stroked-button>
+                    <img style="max-height: 16px" src="../../../assets/icons/database.png" alt="Datasets">
+                    Datasets</button>
+                  <button class="button" mat-stroked-button>Instances</button>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+      <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

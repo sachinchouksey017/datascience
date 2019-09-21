@@ -1,2 +1,11 @@
 /* Y@import "~@angular/material/prebuilt-themes/indigo-pink.css";ou can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+body{
+    margin: 0px;
+    height: 100%;
+}
+*{
+    
+
+    font-family: Lato, "Helvetica Neue", sans-serif;
+}

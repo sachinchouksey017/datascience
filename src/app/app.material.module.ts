@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 // import {MatDialogModule} from '@angular/material/dialog';
+
 import 'hammerjs';
 import {
   MatButtonModule,
@@ -16,6 +17,11 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatMenuModule } from '@angular/material/menu';
+import {MatListModule} from '@angular/material/list'; 
+import {MatChipsModule} from '@angular/material/chips';
 
 @NgModule({
   imports: [
@@ -37,7 +43,12 @@ import { MatRadioModule } from '@angular/material/radio';
     MatRadioModule,
     MatDividerModule,
     MatCheckboxModule,
-    MatGridListModule
+    MatGridListModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatListModule,
+    MatChipsModule
   ],
   exports: [
     MatInputModule,
@@ -57,7 +68,12 @@ import { MatRadioModule } from '@angular/material/radio';
     MatRadioModule,
     MatDividerModule,
     MatCheckboxModule,
-    MatGridListModule
+    MatGridListModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    MatMenuModule,
+    MatListModule,
+    MatChipsModule
   ]
 })
-export class AppMaterial {}
+export class AppMaterial { }

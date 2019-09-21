@@ -1,10 +1,10 @@
 <div  class='container'>
-  <div fxLayout fxLayoutAlign="space-between center">
+  <div class="insideHeader" fxLayout fxLayoutAlign="space-between center">
     <div style='cursor: pointer' (click)="navigate()">
       <img src='../../../assets/images/logo.png'>
     </div>
     <div>
-      <mat-form-field appearance="outline" id='search-input'>
+      <mat-form-field [style.font-size.px]="'14'" appearance="outline" id='search-input'>
         <mat-label>Search</mat-label>
         <input matInput >
       </mat-form-field>

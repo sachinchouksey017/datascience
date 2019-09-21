@@ -1,0 +1,255 @@
+.example-container {
+  height: 100%;
+}
+
+.space {
+  height: 72px;
+}
+
+.drawer {
+  width: 270px;
+
+  // position: fixed;
+  // z-index: 1;
+  // // top: 0;
+  // left: 0;
+  // overflow-x: hidden;
+  // padding-top: 80px;
+  .head {
+    color: #292a2d;
+    font-size: 24px;
+    font-weight: 500;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    padding-left: 11%;
+  }
+
+  .sub-head {
+    font-weight: 500;
+    color: #292a2d;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    padding: 4% 0% 4% 0%;
+    padding-left: 11%;
+  }
+
+  .sidebar-wrapper {
+    font-family: 'Poppins';
+  }
+
+  .wrapper-checkbox {
+    color: #706f73;
+    line-height: 1.5;
+    font-size: 12px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    padding: 2% 0% 4% 0%;
+    padding-left: 11%;
+  }
+
+}
+
+// mat sidenav css
+.example-container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.example-is-mobile .example-toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+}
+
+.example-toolbar {
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 10px 10px -10px #bbbaba;
+  -moz-box-shadow: 0 10px 10px -10px #bbbaba;
+  box-shadow: 0 10px 10px -10px #bbbaba;
+  z-index: 2;
+  height: 4.2em;
+
+  ::ng-deep .mat-form-field-wrapper {
+    padding-bottom: 0.1em !important;
+  }
+
+  // ::ng-deep .mat-form-field {
+  //   width: 530px;
+  // }
+}
+
+h1.example-app-name {
+  margin-left: 8px;
+}
+
+.example-sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+     causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+  // z-index: -1 !important;
+
+}
+
+.example-is-mobile .example-sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+     `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.heightFitContent {
+  height: fit-content;
+}
+
+.fontFamily {
+  font-family: Lato;
+  font-weight: 500;
+}
+
+.content {
+  padding-left: 50px;
+  padding-top: 20px;
+  padding-right: 20px;
+.sort{
+  padding: 20px;
+  .sortByMain {
+    min-height: 35px;
+    .sortBy {
+      font-weight: 600;
+      padding: 8px 30px 4px 0;
+    }
+
+    .clicked {
+      color: #2874f0;
+      cursor: default;
+      border-bottom: 2px solid #2874f0;
+      font-weight: 500;
+      padding: 7px 10px;
+
+    }
+
+    .unclicked {
+      padding: 8px 0 4px;
+      margin: 0 10px;
+      cursor: pointer;
+      color: #878787;
+    }
+  }
+  .submit-button {
+    border-radius: 6px;
+    background-color: #2851a3;
+    color: aliceblue;
+    height: 35px;
+    width: 155px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+}
+
+
+
+
+  // css for cards
+.cardItem {
+  display: flex;
+  flex-direction: row;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+  width: 300px;
+  height: 115px;
+  border-radius: 2px;
+  .imageIcon {
+    width: 90px;
+    height: 90px;
+    border-radius: 7px;
+    background-color: #000000;
+    margin: 11px;
+  }
+  .name {
+    width: 85%;
+    height: 43px;
+    margin: 5px;
+    font-family: Poppins;
+    font-size: 16px;
+    line-height: 1.25;
+    color: #292a2d;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  ::ng-deep .mat-icon {
+    background-repeat: no-repeat;
+    display: inline-block;
+    fill: currentColor;
+    height: 24px;
+    width: 24px;
+    // margin: 11px 0 5px 0;
+  }
+  .icon{
+    margin-top: 10px;
+  }
+  ::ng-deep .info {
+    width: 18%;
+    margin-left: 10px;
+  }
+  .type {
+    width: 40%;
+    height: 15px;
+    font-family: Poppins;
+    font-size: 10px;
+    margin: 14px 2px;
+  }
+  /deep/ .nfc {
+    margin: 5px 10px 0px;
+  }
+  .count {
+    font-size: 10px;
+    font-family: poppins;
+    color: #706f73;
+    margin: 5px 10px 0px;
+  }
+  .run {
+    width: 48.7px;
+    height: 19.3px;
+    border-radius: 5px;
+    border: solid 1px #3ec042;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    float: left;
+    cursor: pointer;
+    .runtext {
+      font-family: poppins;
+      font-size: 10px;
+      color: #3ec042;
+      text-align: center;
+    }
+    .playIcon{
+      height: 16px;
+      width: 16px;
+      font-size: 16px;
+      color: #3ec042;
+    }
+  }
+}
+
+}
+
+
+// media query
+
+@media screen and (max-width: 1230px) {
+  body {
+    background-color: lightgreen;
+  }
+}

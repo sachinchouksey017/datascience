@@ -1,4 +1,4 @@
-.submit-button{
+.submit-button {
   border-radius: 6px;
   background-color: #2851a3;
   color: aliceblue;
@@ -13,13 +13,34 @@
   transform: translateX(-1.1em) scale(1);
   // width: 133.33333%;
 }
-::ng-deep .mat-form-field{
+
+::ng-deep .mat-form-field {
   width: 600px;
 }
-.container{
-  padding-left: 3%;
-  padding-right: 3%;
+
+.container {
+  width: 100%;
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past. */
+  z-index: 2;
+  top: 0;
+  background-color: #ffffff;
+  -webkit-box-shadow: 0 10px 10px -10px #bbbaba;
+  -moz-box-shadow: 0 10px 10px -10px #bbbaba;
+  box-shadow: 0 10px 10px -10px #bbbaba;
+
+  .insideHeader {
+    padding: 6px 3%;
+
+    ::ng-deep .mat-form-field-wrapper {
+      padding-bottom: 0.1em !important;
+    }
+  }
 }
-.submit-button{
+
+
+
+
+.submit-button {
   cursor: pointer;
 }

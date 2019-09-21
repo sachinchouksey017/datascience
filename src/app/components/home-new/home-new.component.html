@@ -1,0 +1,150 @@
+<div class="example-container" [class.example-is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="example-toolbar" fxLayout='row' [class.mat-elevation-z8]="isActive">
+    <div fxLayout='row' fxFlex fxLayoutAlign="none center">
+
+      <div style='cursor: pointer' (click)="navigate()">
+        <img src='../../../assets/images/logo.png'>
+      </div>
+      <div fxFlexOffset='1.875em'>
+        <mat-form-field fxFlex='530px' fxFlex.md='280px' fxFlex.sm='200px' [style.font-size.px]="'13'" appearance="outline" id='search-input'>
+
+          <input matInput>
+          <mat-icon matPrefix>search</mat-icon>
+        </mat-form-field>
+      </div>
+      <div class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
+        Datasets
+      </div>
+      <div class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
+
+        <button class="fontFamily" mat-button [matMenuTriggerFor]="menu">DS Treasure <mat-icon>keyboard_arrow_down
+          </mat-icon></button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item>Item 1</button>
+          <button mat-menu-item>Item 2</button>
+        </mat-menu>
+      </div>
+      <div class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
+        Price
+      </div>
+    </div>
+    <div class="heightFitContent">
+      <button mat-button>Hello,Sign in
+        <mat-icon>account_circle
+        </mat-icon>
+      </button>
+
+    </div>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+    <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
+      fixedTopGap="56" class="drawer" opened>
+      <div class="sidebar-wrapper">
+        <div class="head">Filters</div>
+        <mat-divider></mat-divider>
+        <div class="sub-head">ACCURACY</div>
+        <div class="wrapper-checkbox">
+          <mat-checkbox> 0
+            <30 </mat-checkbox> <br />
+            <mat-checkbox> 30
+              <60 </mat-checkbox> <br />
+              <mat-checkbox> 60<100 </mat-checkbox> </div> <mat-divider>
+                  </mat-divider>
+                  <div class="sub-head">DATA SIZE</div>
+                  <div class="wrapper-checkbox">
+                    <mat-checkbox> 100 MB
+                      <30 </mat-checkbox> <br />
+                      <mat-checkbox> 100 MB - 500 MB </mat-checkbox>
+                      <br />
+                      <mat-checkbox> 500 MB - 1 GB</mat-checkbox>
+                  </div>
+                  <mat-divider></mat-divider>
+                  <div class="sub-head">DATA TYPE</div>
+                  <div class="wrapper-checkbox">
+                    <mat-checkbox>CSV
+                      <30 </mat-checkbox> <br />
+                      <mat-checkbox>JSON </mat-checkbox>
+                      <br />
+                      <mat-checkbox>IMAGES<100 </mat-checkbox> </div> <mat-divider>
+                          </mat-divider>
+                          <div class="sub-head">ALGORITHM</div>
+                          <div class="wrapper-checkbox">
+                            <mat-checkbox>Linear Reg. </mat-checkbox>
+                            <br />
+                            <mat-checkbox>Logistic Reg. </mat-checkbox>
+                          </div>
+                          <div class="sub-head">LICENSE</div>
+                          <div class="wrapper-checkbox">
+                            <mat-checkbox>Free </mat-checkbox>
+                            <br />
+                            <mat-checkbox>Premium </mat-checkbox>
+                          </div>
+                  </div>
+    </mat-sidenav>
+
+    <mat-sidenav-content class="content" fxLayout='column'>
+      <div class="sort" fxLayout='row' fxLayoutAlign='space-between center'>
+        <div class="sortByMain" fxLayout='row'><span class="sortBy">Sort By</span>
+          <div [ngClass]="(sort=='Relevance')?'clicked':'unclicked'" (click)="sortBy('Relevance')">Relevance
+          </div>
+          <div [ngClass]="(sort=='Popularity')?'clicked':'unclicked'" (click)="sortBy('Popularity')">Popularity</div>
+          <div [ngClass]="(sort=='Low')?'clicked':'unclicked'" (click)="sortBy('Low')">Accuracy: Low to High</div>
+          <div [ngClass]="(sort=='High')?'clicked':'unclicked'" (click)="sortBy('High')">Accuracy: High to Low</div>
+          <div [ngClass]="(sort=='Newest')?'clicked':'unclicked'" (click)="sortBy('Newest')">Newest First</div>
+        </div>
+        <div fxLayout='row' fxLayoutAlign='center center'>
+          <div class="heightFitContent" style="display: flex">
+            <img src="../../../assets/icons/list.svg" alt="gridView">
+          </div>
+          <div class='submit-button' fxFlexOffset='1.5em' (click)="navigate('submitdataset')">
+            + Submit Dataset
+          </div>
+        </div>
+      </div>
+      <div  fxLayout="row wrap" fxLayoutGap='15px'>
+          <div class="heightFitContent" *ngFor='let i of datasets'>
+        <div class="cardItem" fxLayout="row" fxLayout.xs="column">
+          <div fxFlex="37%">
+            <img
+              class="imageIcon"
+              src="../../../assets/images/medium_profile.jpg"
+            />
+          </div>
+          <div fxLayout="column" fxFlex="60%">
+            <div fxLayout="row" fxLayoutAlign="start start" fxFlex="40%">
+              <div class="name">
+                  {{i.problem_name}}
+              </div>
+              <div class="icon" fxLayoutAlign="end end">
+                <mat-icon>more_vert</mat-icon>
+              </div>
+              <!-- <h1>{{i.id}}</h1> -->
+    
+            </div>
+            <div fxLayout="row" fxFlex="30%">
+              <mat-icon class="info">tune</mat-icon>
+              <span class="type">{{i.dataset_file_type}}</span>
+            </div>
+            <div fxLayout="row" fxLayoutAlign='space-between center' >
+              <div fxFlexOffset='10px'fxLayout="row" fxLayoutAlign='space-between center'>
+                  <img src="../../../assets/icons/description.png" alt="note">
+                  <!-- <i class="material-icons nfc">
+                      description
+                  </i> -->
+                  <span fxFlexOffset='4px' class="count">{{i.dataset_accuracy}}</span>
+              </div>
+              
+              <div class="run">
+                <span class="runtext" fxLayoutAlign="center center">Run</span>
+                <mat-icon class="playIcon">play_arrow</mat-icon>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
