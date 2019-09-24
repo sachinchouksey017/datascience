@@ -4,7 +4,7 @@
       <img src='../../../assets/images/logo.png'>
     </div>
     <div fxFlexOffset='1.875em'>
-      <mat-form-field fxFlex='530px' fxFlex.md='280px' fxFlex.sm='200px' [style.font-size.px]="'13'"
+      <mat-form-field class="search" fxFlex='530px' fxFlex.md='280px' fxFlex.sm='200px' [style.font-size.px]="'13'"
         appearance="outline" id='search-input'>
         <input matInput>
       </mat-form-field>
@@ -47,7 +47,7 @@
         </span>
       </div>
       <mat-divider></mat-divider>
-      <div class="content" fxLayout="row wrap" fxLayoutGap='15px'>
+      <div class="content" [style.height.px]=myInnerHeight style="overflow: auto" fxLayout="row wrap" fxLayoutGap='15px'>
         <mat-card class="card cardNotSelect" *ngFor='let i of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]'>
           <div fxLayout='column'>
             <div fxLayout='row' class="cardFirstRow">
@@ -81,7 +81,7 @@
       </div>
     </div>
   </div>
-  <div>
+  <div fxLayout='row' class="carDescriptionMain" fxLayoutAlign='center center'>
     <mat-card class="cardDescription">
       <div fxLayout='column'>
         <div fxLayout='row' class="cardFirstRow">

@@ -133,9 +133,12 @@
     }
 
   }
+  
+
 
   .cardDescription {
     min-width: 42.1875em;
+    margin-top: 1em;
 
     .cardFirstRow {
       padding-bottom: 1.25em;
@@ -213,3 +216,56 @@
     }
   }
 }
+
+
+@media screen and (max-width: 1441px) {
+  .cardDescription {
+    min-width: 32.1875em !important;
+  }
+  .datasetsMain{
+  .pandingRejectedFlow {
+    .headCss {
+      padding: 0.6125em .4em 0.4em;
+      font-size: 15px;
+    }
+
+    .selectedHead {
+      border-bottom: 4px solid #2851a3;
+    }
+  }
+ }
+}
+@media screen and (max-width: 1370px) {
+  .cardDescription {
+    min-width: 30.1875em !important;
+  }
+
+}
+
+@media screen and (max-height: 850px) {
+ .carDescriptionMain{
+  overflow: auto;
+  max-height: 720px;
+ }
+}
+
+
+@media screen and (max-height: 770px) {
+  .toolbar {
+    height: 3.2em;
+    .search{
+      font-size: 11px !important;
+    }
+  }
+  .datasetsMain {
+    padding-left: .8em;
+    padding-top: 4em;
+  }
+  .carDescriptionMain{
+    max-height: 601px;
+    .cardDescription {
+      margin-top: 9em;
+  
+   }  }
+  
+ }

@@ -13,10 +13,10 @@ const routes: Routes = [
 
   {
     path: '',
-    component: DatasetsComponent,
-    // resolve: {
-    //   datasets: DatasetsResolverService
-    // }
+    component: AdminDashboardComponent,
+    resolve: {
+      datasets: DatasetsResolverService
+    }
   }
 , {
   path: 'old',
