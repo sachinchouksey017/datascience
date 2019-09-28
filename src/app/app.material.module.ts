@@ -22,6 +22,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list'; 
 import {MatChipsModule} from '@angular/material/chips';
+import {MatTableModule} from '@angular/material/table';
 
 @NgModule({
   imports: [
@@ -48,7 +49,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatSidenavModule,
     MatMenuModule,
     MatListModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTableModule
   ],
   exports: [
     MatInputModule,
@@ -73,7 +75,8 @@ import {MatChipsModule} from '@angular/material/chips';
     MatSidenavModule,
     MatMenuModule,
     MatListModule,
-    MatChipsModule
+    MatChipsModule,
+    MatTableModule
   ]
 })
 export class AppMaterial { }

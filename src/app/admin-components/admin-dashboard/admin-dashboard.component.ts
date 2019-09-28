@@ -12,8 +12,7 @@ import { DatasetsharedServiceService } from '../../../_service/datasetshared-ser
 export class AdminDashboardComponent implements OnInit, OnDestroy {
   mobileQuery: MediaQueryList;
   isActive = true;
-  datasets = []
-  selected = 'Description';
+  selected = 'Report';
   fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
 
   fillerContent = Array.from({ length: 50 }, () =>
@@ -32,15 +31,7 @@ export class AdminDashboardComponent implements OnInit, OnDestroy {
     this.mobileQuery.addListener(this._mobileQueryListener);
   }
   ngOnInit() {
-    this.ActiveRoute.data.subscribe(data => {
-      console.log('data frm service ', data.datasets);
-      this.datasets = data.datasets;
-      // this.datasets = this.datasets.concat(this.datasets);
-      // this.datasets = this.datasets.concat(this.datasets);
-
-      this.sharedService.changeMessage(this.datasets);
-    })
-
+  
   }
 
   goToPage(value) {

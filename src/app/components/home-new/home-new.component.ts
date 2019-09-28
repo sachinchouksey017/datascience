@@ -14,15 +14,6 @@ export class HomeNewComponent implements OnDestroy, OnInit {
   isActive = true;
   datasets = []
   sort: string;
-  fillerNav = Array.from({ length: 50 }, (_, i) => `Nav Item ${i + 1}`);
-
-  fillerContent = Array.from({ length: 50 }, () =>
-    `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-       labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-       laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
-       voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`);
-
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router, private ActiveRoute: ActivatedRoute,
@@ -35,9 +26,6 @@ export class HomeNewComponent implements OnDestroy, OnInit {
     this.ActiveRoute.data.subscribe(data => {
       console.log('data frm service ', data.datasets);
       this.datasets = data.datasets;
-      this.datasets=this.datasets.concat(this.datasets);
-      this.datasets=this.datasets.concat(this.datasets);
-
       this.sharedService.changeMessage(this.datasets);
     })
 

@@ -48,7 +48,7 @@
       </div>
       <mat-divider></mat-divider>
       <div class="content" [style.height.px]=myInnerHeight style="overflow: auto" fxLayout="row wrap" fxLayoutGap='15px'>
-        <mat-card class="card cardNotSelect" *ngFor='let i of [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]'>
+        <mat-card (click)="showCardDescription(i)" [ngClass]="selectedCardId == i ? 'cardSelect':'cardNotSelect'" class="card " *ngFor='let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]'>
           <div fxLayout='column'>
             <div fxLayout='row' class="cardFirstRow">
               <div fxFlex class="name">
@@ -81,7 +81,7 @@
       </div>
     </div>
   </div>
-  <div fxLayout='row' class="carDescriptionMain" fxLayoutAlign='center center'>
+  <div *ngIf='selectedCard' fxLayout='row' class="carDescriptionMain" fxLayoutAlign='center center'>
     <mat-card class="cardDescription">
       <div fxLayout='column'>
         <div fxLayout='row' class="cardFirstRow">

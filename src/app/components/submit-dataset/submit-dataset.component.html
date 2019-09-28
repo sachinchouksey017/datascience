@@ -1,84 +1,93 @@
-<div class="cotainer" fxLayout="column">
-  <div fxLayout="row"  id='head' class="heading about" fxLayoutAlign="start center">
-    Submit a Dataset
-  </div>
-  <div fxLayout="row" class="about" fxLayoutAlign="start center">
-    We've relied on startups and our users to submit new startups for Launching Next. We found it's the best way to make sure
-    we're always bringing you great, new submissions. Use the form to tell us about a startup. We review submissions every day,
-    and you'll receive an email if we publish your startup. Submitting to Launching Next is free, but if you want your startup to
-    be considered for publication within 1-business day, we offer a $49 upgrade on the next page.
-  </div>
+<div style="height: 100%" fxLayout='column'>
+  <app-header></app-header>
+  <div fxFlex fxLayout='row' fxLayoutAlign='center center'>
+    <mat-card fxFlex='80' fxFlex.md='90' fxFlex.sm='100' fxFlex.xs='100' class="cotainer" fxLayout="column">
+      <div fxLayout="row" id='head' class="heading about" fxLayoutAlign="start center">
+        Submit a Dataset
+      </div>
+      <div fxLayout="row" class="about" fxLayoutAlign="start center">
+        We've relied on startups and our users to submit new startups for Launching Next. We found it's the best way to
+        make sure
+        we're always bringing you great, new submissions. Use the form to tell us about a startup. We review submissions
+        every day,
+        and you'll receive an email if we publish your startup. Submitting to Launching Next is free, but if you want
+        your
+        startup to
+        be considered for publication within 1-business day, we offer a $49 upgrade on the next page.
+      </div>
 
-  <div class="form-wrapper">
-    <div fxLayout class="about">
-      About the Dataset
-    </div>
-    <div fxLayout>
-      <form [formGroup]="submitForm" class="inputForm" fxLayoutGap="5px" id="signup" #formDirective="ngForm">
-        <div fxLayout>
-          <mat-form-field appearance="outline" class="matArea">
-            <mat-label>Problem Name</mat-label>
-            <input matInput placeholder="Problem Name" formControlName="problem_name" required />
-          </mat-form-field>
-          <mat-form-field appearance="outline" class="matArea">
-            <mat-label>Maximum Accuracy on which Algorithm, write its name</mat-label>
-            <input matInput formControlName="max_accuracy" required />
-          </mat-form-field>
-        </div>
-
-        <div fxLayout>
-          <mat-form-field appearance="outline" class="matArea">
-            <mat-label>Model Accuracy %</mat-label>
-            <input matInput formControlName="model_acc" required />
-          </mat-form-field>
-          <mat-form-field appearance="outline" class="matArea">
-            <mat-label>Dataset file type</mat-label>
-            <input matInput formControlName="dataset_type" required />
-          </mat-form-field>
-        </div>
-
-        <div fxLayout>
-          <mat-form-field appearance="outline" class="matArea">
-            <mat-label>Github Url</mat-label>
-            <input matInput formControlName="git_url" required />
-          </mat-form-field>
-          <mat-form-field appearance="outline" class="matArea">
-            <mat-label>Jupyter Notebook Url on which you get maximum accuracy</mat-label>
-            <input matInput formControlName="jupyter_url" required />
-          </mat-form-field>
-        </div>
-
-        <div fxLayout>
-          <mat-form-field appearance="outline" class="matArea">
-            <mat-label>Dataset Url</mat-label>
-            <input matInput formControlName="dataset_url" required />
-          </mat-form-field>
-          <mat-form-field appearance="outline" class="matArea" id="extra">
-            <!-- <mat-label>Jupyter Notebook Url on which you get maximum accuracy</mat-label> -->
-            <input matInput required />
-          </mat-form-field>
-        </div>
-
+      <div class="form-wrapper">
         <div fxLayout class="about">
-          About You
+          About the Dataset
         </div>
+        <div fxLayout='row'>
+          <form fxFlex [formGroup]="submitForm" class="inputForm" fxLayoutGap="5px" id="signup" #formDirective="ngForm">
+            <div fxLayout fxLayout.xs='column'>
+              <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
+                <mat-label>Problem Name</mat-label>
+                <input matInput placeholder="Problem Name" formControlName="problem_name" required />
+              </mat-form-field>
+              <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
+                <mat-label>Maximum Accuracy on which Algorithm, write its name</mat-label>
+                <input matInput formControlName="max_accuracy" required />
+              </mat-form-field>
+            </div>
 
-        <div fxLayout>
-          <mat-form-field appearance="outline" class="matArea">
-            <mat-label>Your Name</mat-label>
-            <input matInput />
-          </mat-form-field>
-          <mat-form-field appearance="outline" class="matArea">
-            <mat-label>Your Email address</mat-label>
-            <input matInput />
-          </mat-form-field>
+            <div fxLayout fxLayout.xs='column'>
+              <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
+                <mat-label>Model Accuracy %</mat-label>
+                <input matInput formControlName="model_acc" required />
+              </mat-form-field>
+              <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
+                <mat-label>Dataset file type</mat-label>
+                <input matInput formControlName="dataset_type" required />
+              </mat-form-field>
+            </div>
+
+            <div fxLayout fxLayout.xs='column'>
+              <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
+                <mat-label>Github Url</mat-label>
+                <input matInput formControlName="git_url" required />
+              </mat-form-field>
+              <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
+                <mat-label>Jupyter Notebook Url on which you get maximum accuracy</mat-label>
+                <input matInput formControlName="jupyter_url" required />
+              </mat-form-field>
+            </div>
+
+            <div fxLayout fxLayout.xs='column'>
+              <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
+                <mat-label>Dataset Url</mat-label>
+                <input matInput formControlName="dataset_url" required />
+              </mat-form-field>
+              <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea" id="extra">
+                <!-- <mat-label>Jupyter Notebook Url on which you get maximum accuracy</mat-label> -->
+                <input matInput required />
+              </mat-form-field>
+            </div>
+
+            <!-- <div fxLayout class="about">
+              About You
+            </div>
+
+            <div fxLayout>
+              <mat-form-field appearance="outline" class="matArea">
+                <mat-label>Your Name</mat-label>
+                <input matInput />
+              </mat-form-field>
+              <mat-form-field appearance="outline" class="matArea">
+                <mat-label>Your Email address</mat-label>
+                <input matInput />
+              </mat-form-field>
+            </div> -->
+            <div fxLayout fxLayoutAlign="end center" class='submitRow'>
+              <div class="submit-button" (click)="processSignUp(submitForm.value, formDirective)">
+                Submit Dataset
+              </div>
+            </div>
+          </form>
         </div>
-        <div fxLayout fxLayoutAlign="end center" class='submitRow'>
-          <div class="submit-button" (click)="processSignUp(submitForm.value, formDirective)">
-            Submit Dataset
-          </div>
-        </div>
-      </form>
-    </div>
+      </div>
+    </mat-card>
   </div>
 </div>

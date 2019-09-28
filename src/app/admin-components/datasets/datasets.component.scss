@@ -21,7 +21,7 @@
 .datasetsMain {
   padding-left: 3em;
   padding-top: 5.2em;
-
+  background-color: #d0d0d021;
   .arrowFlow {
     padding-top: 1em;
 
@@ -69,6 +69,8 @@
     .card {
       width: 300px;
       margin-top: 10px;
+      height: fit-content;
+      cursor: pointer;
 
       .cardFirstRow {
         padding-bottom: 1.25em;

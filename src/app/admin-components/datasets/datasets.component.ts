@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./datasets.component.scss']
 })
 export class DatasetsComponent implements OnInit {
-
+  selectedCard;
+  selectedCardId;
   constructor() { }
   // myInnerHeight = 808;
   myInnerHeight = window.innerHeight - 176;
@@ -18,8 +19,14 @@ export class DatasetsComponent implements OnInit {
     } else if (window.innerHeight <= 938) {
       this.myInnerHeight = 628;
     }
-    console.log(window.innerHeight, 'inner he',this.myInnerHeight);
+    console.log(window.innerHeight, 'inner he', this.myInnerHeight);
 
+  }
+
+
+  showCardDescription(cardId) {
+    this.selectedCard = true;
+    this.selectedCardId = cardId;
   }
 
 }

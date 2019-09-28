@@ -107,56 +107,7 @@
     </mat-sidenav>
 
     <mat-sidenav-content class="content" fxLayout='column'>
-      <div fxLayout="row wrap" fxLayoutGap='15px'>
-        <mat-card class="card" *ngFor='let i of [1,1,1,1]'>
-          <div fxLayout='column'>
-            <div fxLayout='row'>
-              <div>
-                <img class="userImage" src="../../../assets/images/medium_profile.jpg" alt="userImage">
-              </div>
-              <div fxFlex fxFlexOffset='9px' fxLayout='column' class="userBox">
-                <div>
-                  User name
-                </div>
-                <div fxFlexOffset='5px' fxLayout='row' fxLayoutAlign='none center'>
-                  <div fxLayout='column' class="stepper" fxLayoutAlign="space-between center">
-                    <div class="green">
-
-                    </div>
-                    <div class="blackLine">
-
-                    </div>
-                    <div class="red">
-
-                    </div>
-                  </div>
-                  <div fxLayout='column' fxFlexOffset='3px' fxLayoutAlign="space-between center">
-                    <div class="date">
-                      11 Jan 2019
-                    </div>
-                    <div class="date" fxFlexOffset='5px'>
-                      10 Mar 2019
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="count">
-                5
-
-              </div>
-            </div>
-            <div fxFlexOffset='10px' class="buttons" fxLayout='row' fxLayoutAlign='space-between center'>
-                  <button class="button" mat-stroked-button>
-                    <img style="max-height: 16px" src="../../../assets/icons/bill.png" alt="bills">
-                    Bill</button>
-                  <button class="button" mat-stroked-button>
-                    <img style="max-height: 16px" src="../../../assets/icons/database.png" alt="Datasets">
-                    Datasets</button>
-                  <button class="button" mat-stroked-button>Instances</button>
-            </div>
-          </div>
-        </mat-card>
-      </div>
+      <router-outlet></router-outlet>
       <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
     </mat-sidenav-content>
   </mat-sidenav-container>

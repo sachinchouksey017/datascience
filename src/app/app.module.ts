@@ -15,8 +15,10 @@ import { HomeNewComponent } from './components/home-new/home-new.component';
 import { AdminLoginComponent } from './admin-components/admin-login/admin-login.component';
 import { AdminDashboardComponent } from './admin-components/admin-dashboard/admin-dashboard.component';
 import { DatasetsComponent } from './admin-components/datasets/datasets.component';
+import { InstancesComponent } from './admin-components/instances/instances.component';
+import { UserReportComponent } from './admin-components/user-report/user-report.component';
 @NgModule({
-  declarations: [AppComponent,  HomeComponent, HeaderComponent,SubmitDatasetComponent, AdminPanelComponent, HomeNewComponent, AdminLoginComponent, AdminDashboardComponent, DatasetsComponent],
+  declarations: [AppComponent,  HomeComponent, HeaderComponent,SubmitDatasetComponent, AdminPanelComponent, HomeNewComponent, AdminLoginComponent, AdminDashboardComponent, DatasetsComponent, InstancesComponent, UserReportComponent],
   imports: [BrowserModule, AppRoutingModule, AppMaterial,HttpClientModule],
   providers: [HttpClientModule],
   bootstrap: [AppComponent]
