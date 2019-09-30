@@ -10,7 +10,12 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
   { name: 'benqwldglc', endPoint: 'http://bridgelabzsite.herokuapp.com', weight: 1.0079, symbol: 'H' },
-  { name: 'fugugdfg', endPoint: 'http://bridgelabzsite.herokuapp.com', weight: 4.0026, symbol: 'He' }
+  { name: 'fugugdfg', endPoint: 'http://bridgelabzsite.herokuapp.com', weight: 4.0026, symbol: 'He' },
+  { name: 'abcd', endPoint: 'http://bridgelabzsite.herokuapp.com', weight: 4.0026, symbol: 'He' },
+  { name: 'fjhbyjg', endPoint: 'http://bridgelabzsite.herokuapp.com', weight: 4.0026, symbol: 'He' },
+  { name: 'jhbstydfg', endPoint: 'http://bridgelabzsite.herokuapp.com', weight: 4.0026, symbol: 'He' },
+  { name: 'fug', endPoint: 'http://bridgelabzsite.herokuapp.com', weight: 4.0026, symbol: 'He' }
+
 
 ];
 @Component({

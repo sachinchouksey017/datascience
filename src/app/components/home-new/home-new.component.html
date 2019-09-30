@@ -2,20 +2,22 @@
   <mat-toolbar class="example-toolbar" fxLayout='row' [class.mat-elevation-z8]="isActive">
     <div fxLayout='row' fxFlex fxLayoutAlign="none center">
 
-      <div style='cursor: pointer' (click)="navigate()">
+      <div  style='cursor: pointer' (click)="navigate()">
         <img src='../../../assets/images/logo.png'>
       </div>
-      <div fxFlexOffset='1.875em'>
-        <mat-form-field fxFlex='530px' fxFlex.md='280px' fxFlex.sm='200px' [style.font-size.px]="'13'" appearance="outline" id='search-input'>
+     
+      <div fxFlexOffset='1.875em' fxFlexOffset.sm='1em' fxFlexOffset.xs='1em'>
+        <mat-form-field fxFlex='530px' fxFlex.md='280px' fxFlex.sm='150px' fxFlex.xs='150px' [style.font-size.px]="'13'"
+          appearance="outline" id='search-input'>
 
           <input matInput>
           <mat-icon matPrefix>search</mat-icon>
         </mat-form-field>
       </div>
-      <div class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
+      <div class="heightFitContent fontFamily" fxFlexOffset='1.875em' fxFlexOffset.md='1em' fxFlexOffset.sm='.8em'>
         Datasets
       </div>
-      <div class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
+      <div class="heightFitContent fontFamily" fxFlexOffset='1.875em' fxFlexOffset.md='1em' fxFlexOffset.sm='.8em'>
 
         <button class="fontFamily" mat-button [matMenuTriggerFor]="menu">DS Treasure <mat-icon>keyboard_arrow_down
           </mat-icon></button>
@@ -24,7 +26,7 @@
           <button mat-menu-item>Item 2</button>
         </mat-menu>
       </div>
-      <div class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
+      <div class="heightFitContent fontFamily" fxFlexOffset='1.875em' fxFlexOffset.md='1em' fxFlexOffset.sm='.8em'>
         Price
       </div>
     </div>
@@ -85,7 +87,7 @@
 
     <mat-sidenav-content class="content" fxLayout='column'>
       <div class="sort" fxLayout='row' fxLayoutAlign='space-between center'>
-        <div class="sortByMain" fxLayout='row'><span class="sortBy">Sort By</span>
+        <div fxHide=true fxShow.lg=true class="sortByMain" fxLayout='row'><span class="sortBy">Sort By</span>
           <div [ngClass]="(sort=='Relevance')?'clicked':'unclicked'" (click)="sortBy('Relevance')">Relevance
           </div>
           <div [ngClass]="(sort=='Popularity')?'clicked':'unclicked'" (click)="sortBy('Popularity')">Popularity</div>
@@ -93,8 +95,33 @@
           <div [ngClass]="(sort=='High')?'clicked':'unclicked'" (click)="sortBy('High')">Accuracy: High to Low</div>
           <div [ngClass]="(sort=='Newest')?'clicked':'unclicked'" (click)="sortBy('Newest')">Newest First</div>
         </div>
+        <div class="sort-sortBy" fxHide.lg=true fxShow=true fxHide.xs=true fxLayout>
+          <div>Sort by :</div>
+          <mat-select fxFlex fxFlexOffset='5%' placeholder='Recommended' [(ngModel)]="selectedValue" name="food">
+            <mat-option *ngFor="let food of foods" [value]="food.value">
+              {{food.viewValue}}
+            </mat-option>
+          </mat-select>
+        </div>
+        <!-- copy from flip -->
+        <div fxFlex fxHide fxShow.xs=true fxLayout>
+          <div fxLayout fxFlex=49 fxLayoutAlign='center center' (click)="openBottomSheet()">
+            <mat-icon>
+              sort
+            </mat-icon>
+            <span>Sort</span>
+          </div>
+          <mat-divider fxFlex=2 [vertical]="true"></mat-divider>
+          <div fxLayout fxFlex=49 fxLayoutAlign='center center' (click)='snav.toggle()'>
+            <mat-icon>
+              filter_list
+            </mat-icon>
+            <span>Filter</span>
+          </div>
+        </div>
+        <!--     -->
         <div fxLayout='row' fxLayoutAlign='center center'>
-          <div class="heightFitContent" style="display: flex">
+          <div fxHide.xs=true class="heightFitContent" style="display: flex">
             <img src="../../../assets/icons/list.svg" alt="gridView">
           </div>
           <div class='submit-button' fxFlexOffset='1.5em' (click)="navigate('submitdataset')">
@@ -102,43 +129,41 @@
           </div>
         </div>
       </div>
-      <div  fxLayout="row wrap" fxLayoutGap='15px'>
-          <div class="heightFitContent" *ngFor='let i of datasets'>
-        <div class="cardItem" fxLayout="row" fxLayout.xs="column">
-          <div fxFlex="37%">
-            <img
-              class="imageIcon"
-              src="../../../assets/images/medium_profile.jpg"
-            />
-          </div>
-          <div fxLayout="column" fxFlex="60%">
-            <div fxLayout="row" fxLayoutAlign="start start" fxFlex="40%">
-              <div class="name">
+
+      <div fxLayout="row wrap" fxLayoutGap='15px'>
+        <div class="heightFitContent width" *ngFor='let i of datasets'>
+          <div class="cardItem" fxLayout="row">
+            <div>
+              <img class="imageIcon" src="../../../assets/images/medium_profile.jpg" />
+            </div>
+            <div fxLayout="column" style="padding-right: 5px;" fxFlex>
+              <div fxLayout="row" fxLayoutAlign="start start" fxFlex="40%">
+                <div class="name">
                   {{i.problem_name}}
+                </div>
+                <div class="icon" fxLayoutAlign="end end">
+                  <mat-icon>more_vert</mat-icon>
+                </div>
               </div>
-              <div class="icon" fxLayoutAlign="end end">
-                <mat-icon>more_vert</mat-icon>
+              <div fxLayout="row" fxFlex="30%">
+                <mat-icon class="info">tune</mat-icon>
+                <span class="type">{{i.dataset_file_type}}</span>
               </div>
-            </div>
-            <div fxLayout="row" fxFlex="30%">
-              <mat-icon class="info">tune</mat-icon>
-              <span class="type">{{i.dataset_file_type}}</span>
-            </div>
-            <div fxLayout="row" fxLayoutAlign='space-between center' >
-              <div fxFlexOffset='10px'fxLayout="row" fxLayoutAlign='space-between center'>
+              <div fxLayout="row" fxLayoutAlign='space-between center'>
+                <div fxFlexOffset='10px' fxLayout="row" fxLayoutAlign='space-between center'>
                   <img src="../../../assets/icons/description.png" alt="note">
                   <span fxFlexOffset='4px' class="count">{{i.dataset_accuracy}}</span>
-              </div>
-              
-              <div class="run">
-                <span class="runtext" fxLayoutAlign="center center">Run</span>
-                <mat-icon class="playIcon">play_arrow</mat-icon>
+                </div>
+
+                <div class="run">
+                  <span class="runtext" fxLayoutAlign="center center">Run</span>
+                  <mat-icon class="playIcon">play_arrow</mat-icon>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>

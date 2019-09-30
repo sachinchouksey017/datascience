@@ -23,6 +23,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import {MatListModule} from '@angular/material/list'; 
 import {MatChipsModule} from '@angular/material/chips';
 import {MatTableModule} from '@angular/material/table';
+import {MatSelectModule} from '@angular/material/select';
+import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 
 @NgModule({
   imports: [
@@ -50,7 +52,9 @@ import {MatTableModule} from '@angular/material/table';
     MatMenuModule,
     MatListModule,
     MatChipsModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatBottomSheetModule
   ],
   exports: [
     MatInputModule,
@@ -76,7 +80,9 @@ import {MatTableModule} from '@angular/material/table';
     MatMenuModule,
     MatListModule,
     MatChipsModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatBottomSheetModule
   ]
 })
 export class AppMaterial { }

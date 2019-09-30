@@ -1,0 +1,77 @@
+.cardDescription {
+
+    .cardFirstRow {
+      padding-bottom: 1.25em;
+      font-size: 1.2em;
+      font-weight: 600;
+
+      // .name {
+      //   color: #2851a3;
+      // }
+    }
+
+    .cardSecondRow {
+      font-size: .8em;
+      color: #676767;
+    }
+
+    .cardThirdRow {
+      font-size: .8em;
+      color: #676767;
+    }
+
+    .run {
+      width: 48.7px;
+      height: 19.3px;
+      border-radius: 5px;
+      border: solid 1px #3ec042;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      float: left;
+      cursor: pointer;
+
+      .runtext {
+        font-family: poppins;
+        font-size: 10px;
+        color: #3ec042;
+        text-align: center;
+      }
+
+      .playIcon {
+        height: 16px;
+        width: 16px;
+        font-size: 16px;
+        color: #3ec042;
+      }
+    }
+
+    .inputs {
+      ::ng-deep .mat-form-field-wrapper {
+        padding-bottom: 0.44375em;
+      }
+    }
+
+    .buttons {
+      .approve {
+        border-color: green;
+        color: green;
+
+      }
+
+      .pending {
+        border-color: grey;
+        color: grey;
+      }
+
+      .rejected {
+        border-color: red;
+        color: red;
+      }
+      .sameButton{
+        padding: 0px 20px;
+        line-height: 30px;
+      }
+    }
+  }

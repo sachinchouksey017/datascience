@@ -65,10 +65,20 @@ $linehight:31px;
    ::ng-deep .mat-table thead{
       background-color: #fafafa;
     }
+    th{
+      color: rgb(35, 86, 126) !important;
+
+    }
   }
   
   table {
     width: 100%;
+    .mat-column-name {
+    color:  #4BB0FB;
+    }
+    .mat-column-endPoint {
+      color:  #4BB0FB;
+      }
   }
   ::ng-deep .mat-checkbox-layout{
     vertical-align: baseline !important;

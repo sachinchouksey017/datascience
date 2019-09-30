@@ -1,0 +1,21 @@
+.sort {
+  color: rgb(135, 135, 135);
+  margin: 12px 0 12px 12px;
+}
+
+.selected {
+  display: flex;
+  position: relative;
+  height: 16px;
+  width: 16px;
+  margin-right: 8px;
+  margin-top: 2px;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.same {
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  padding: 11px 0;
+}

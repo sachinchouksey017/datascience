@@ -1,0 +1,101 @@
+<mat-card class="cardDescription">
+    <div fxLayout='column'>
+      <div fxLayout='row' class="cardFirstRow">
+        <div fxFlex class="name">
+          problem name
+        </div>
+
+        <div fxLayout='row'>
+          <img style="height: 1.5625em; cursor: pointer;" src="../../../assets/icons/leftArrow.png" alt="previous">
+          <img fxFlexOffset='.6em' style="height: 1.5625em; cursor: pointer;"
+            src="../../../assets/icons/rightArrow.png" alt="next">
+
+        </div>
+      </div>
+      <div fxLayout='row' class="cardSecondRow">
+        <img style="height: 21px" src="../../../assets/icons/flow-chart.png" alt="algorithm">
+        <div fxFlexOffset='.8em'>
+          Algorithm
+        </div>
+      </div>
+      <div fxLayout='row' style="padding-top: .7em">
+        <div fxLayout='row' class="cardThirdRow" fxFlex>
+          <img style="height: 21px" src="../../../assets/icons/note.png" alt="note">
+          <div fxFlexOffset='.8em'>
+            12
+          </div>
+        </div>
+        <div class="run">
+          <span class="runtext" fxLayoutAlign="center center">Run</span>
+          <mat-icon class="playIcon">play_arrow</mat-icon>
+        </div>
+
+      </div>
+    </div>
+    <div style="padding: 1em 0px">
+      <mat-divider style="position: static"></mat-divider>
+
+    </div>
+    <div class="inputs">
+      <div style="width: 100%">
+        <mat-form-field fxFlex [style.font-size.px]="'13'" appearance="outline">
+          <mat-label>Problem Name</mat-label>
+          <input matInput placeholder="Placeholder">
+        </mat-form-field>
+      </div>
+      <div style="width: 100%">
+        <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
+          <mat-label>Model Accyracy %</mat-label>
+          <input matInput placeholder="Model Accyracy %">
+        </mat-form-field>
+      </div>
+      <div style="width: 100%">
+        <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
+          <mat-label>Dataset Size</mat-label>
+          <input matInput placeholder="Dataset Size">
+        </mat-form-field>
+      </div>
+      <div style="width: 100%">
+        <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
+          <mat-label>Github Url</mat-label>
+          <input matInput placeholder="Github Url">
+        </mat-form-field>
+      </div>
+      <div style="width: 100%">
+        <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
+          <mat-label>Dataset Url</mat-label>
+          <input matInput placeholder="Dataset Url">
+        </mat-form-field>
+      </div>
+      <div style="width: 100%">
+        <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
+          <mat-label>Maxiimun Accyracy on which Algorithm,write its name</mat-label>
+          <input matInput placeholder="Maxiimun Accyracy on which Algorithm,write its name">
+        </mat-form-field>
+      </div>
+      <div style="width: 100%">
+        <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
+          <mat-label>Dataset file type</mat-label>
+          <input matInput placeholder="Dataset file type">
+        </mat-form-field>
+      </div>
+      <div style="width: 100%">
+        <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
+          <mat-label>Document Url</mat-label>
+          <input matInput placeholder="Document Url">
+        </mat-form-field>
+      </div>
+      <div style="width: 100%">
+        <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
+          <mat-label>Jupyter Notebook Url on which you get maximum accuracy </mat-label>
+          <input matInput placeholder="Jupyter Notebook Url on which you get maximum accuracy">
+        </mat-form-field>
+      </div>
+    </div>
+    <div class="buttons" fxLayout='row' fxLayoutAlign="end center" fxLayoutGap='1em'>
+        <button class="approve sameButton" mat-stroked-button>Approve</button>
+        <button class="pending sameButton" mat-stroked-button>Pending</button>
+        <button class="rejected sameButton" mat-stroked-button>Rejected</button>
+      
+    </div>
+  </mat-card>

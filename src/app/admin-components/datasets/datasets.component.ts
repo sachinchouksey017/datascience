@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { BottomSheetDatasetDescriptionComponent } from '../bottom-sheet-dataset-description/bottom-sheet-dataset-description.component';
 @Component({
   selector: 'app-datasets',
   templateUrl: './datasets.component.html',
@@ -8,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class DatasetsComponent implements OnInit {
   selectedCard;
   selectedCardId;
-  constructor() { }
+  constructor(private _bottomSheet: MatBottomSheet) { }
   // myInnerHeight = 808;
   myInnerHeight = window.innerHeight - 176;
   ngOnInit() {
@@ -25,7 +26,12 @@ export class DatasetsComponent implements OnInit {
 
 
   showCardDescription(cardId) {
-    this.selectedCard = true;
+    if (window.innerWidth > 600) {
+      this.selectedCard = true;
+    } else {
+      this._bottomSheet.open(BottomSheetDatasetDescriptionComponent);
+    }
+
     this.selectedCardId = cardId;
   }
 

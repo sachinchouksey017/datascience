@@ -1,0 +1,50 @@
+<div>
+  <div class="sort">
+    SORT BY
+  </div>
+  <mat-divider></mat-divider>
+  <div fxLayout fxLayoutAlign='center center' (click)="selectSortName('Relevance')">
+    <div class="same" fxFlex>
+      Relevance
+    </div>
+    <div class="selected">
+      <img src="{{selectedValue=='Relevance'? selectedImageUrl:notSelectedImageUrl}}"
+        style="opacity: 1; object-fit: cover; height: 100%; width: 100%; transition: opacity 0.3s ease-out 0s;">
+    </div>
+  </div>
+  <div fxLayout fxLayoutAlign='center center' (click)="selectSortName('Popularity')">
+    <div class="same" fxFlex>
+      Popularity
+    </div>
+    <div class="selected">
+      <img src="{{selectedValue=='Popularity'? selectedImageUrl:notSelectedImageUrl}}"
+        style="opacity: 1; object-fit: cover; height: 100%; width: 100%; transition: opacity 0.3s ease-out 0s;">
+    </div>
+  </div>
+  <div fxLayout fxLayoutAlign='center center' (click)="selectSortName('Low')">
+    <div class="same" fxFlex>
+      Accuracy: Low to High
+    </div>
+    <div class="selected">
+      <img src="{{selectedValue=='Low'? selectedImageUrl:notSelectedImageUrl}}"
+        style="opacity: 1; object-fit: cover; height: 100%; width: 100%; transition: opacity 0.3s ease-out 0s;">
+    </div>
+  </div>
+  <div fxLayout fxLayoutAlign='center center' (click)="selectSortName('High')">
+    <div class="same" fxFlex>
+      Accuracy: High to Low
+    </div>
+    <div class="selected">
+      <img src="{{selectedValue=='High'? selectedImageUrl:notSelectedImageUrl}}"
+        style="opacity: 1; object-fit: cover; height: 100%; width: 100%; transition: opacity 0.3s ease-out 0s;">
+    </div>
+  </div>
+  <div fxLayout fxLayoutAlign='center center' (click)="selectSortName('Newest')">
+    <div class="same" fxFlex>
+      Newest First
+    </div>
+    <div class="selected">
+      <img src="{{selectedValue=='Newest'? selectedImageUrl:notSelectedImageUrl}}"
+        style="opacity: 1; object-fit: cover; height: 100%; width: 100%; transition: opacity 0.3s ease-out 0s;"></div>
+  </div>
+</div>
