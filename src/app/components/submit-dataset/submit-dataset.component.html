@@ -26,10 +26,14 @@
               <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
                 <mat-label>Problem Name</mat-label>
                 <input matInput placeholder="Problem Name" formControlName="problem_name" required />
+                <mat-error fxFlex *ngIf="!submitForm.controls['problem_name'].valid && submitForm.controls['problem_name'].touched">
+                  {{ getErrorMessage('problem_name', 'Problem Name') }} </mat-error>
               </mat-form-field>
               <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
                 <mat-label>Maximum Accuracy on which Algorithm, write its name</mat-label>
                 <input matInput formControlName="max_accuracy" required />
+                <mat-error fxFlex *ngIf="!submitForm.controls['max_accuracy'].valid && submitForm.controls['max_accuracy'].touched">
+                  {{ getErrorMessage('max_accuracy', 'Max Accuracy') }} </mat-error>
               </mat-form-field>
             </div>
 
@@ -37,10 +41,14 @@
               <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
                 <mat-label>Model Accuracy %</mat-label>
                 <input matInput formControlName="model_acc" required />
+                <mat-error fxFlex *ngIf="!submitForm.controls['model_acc'].valid && submitForm.controls['model_acc'].touched">
+                  {{ getErrorMessage('model_acc', 'Model Accuracy') }} </mat-error>
               </mat-form-field>
               <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
                 <mat-label>Dataset file type</mat-label>
                 <input matInput formControlName="dataset_type" required />
+                <mat-error fxFlex *ngIf="!submitForm.controls['dataset_type'].valid && submitForm.controls['dataset_type'].touched">
+                  {{ getErrorMessage('dataset_type', 'Dataset Type') }} </mat-error>
               </mat-form-field>
             </div>
 
@@ -48,10 +56,14 @@
               <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
                 <mat-label>Github Url</mat-label>
                 <input matInput formControlName="git_url" required />
+                <mat-error fxFlex *ngIf="!submitForm.controls['git_url'].valid && submitForm.controls['git_url'].touched">
+                  {{ getErrorMessage('git_url', 'Git Url') }} </mat-error>
               </mat-form-field>
               <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
                 <mat-label>Jupyter Notebook Url on which you get maximum accuracy</mat-label>
                 <input matInput formControlName="jupyter_url" required />
+                <mat-error fxFlex *ngIf="!submitForm.controls['jupyter_url'].valid && submitForm.controls['jupyter_url'].touched">
+                  {{ getErrorMessage('jupyter_url', 'Jupyter Url') }} </mat-error>
               </mat-form-field>
             </div>
 
@@ -59,11 +71,10 @@
               <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
                 <mat-label>Dataset Url</mat-label>
                 <input matInput formControlName="dataset_url" required />
+                <mat-error fxFlex *ngIf="!submitForm.controls['dataset_url'].valid && submitForm.controls['dataset_url'].touched">
+                  {{ getErrorMessage('dataset_url', 'Dataset Url') }} </mat-error>
               </mat-form-field>
-              <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea" id="extra">
-                <!-- <mat-label>Jupyter Notebook Url on which you get maximum accuracy</mat-label> -->
-                <input matInput required />
-              </mat-form-field>
+              
             </div>
 
             <!-- <div fxLayout class="about">

@@ -52,8 +52,6 @@ export class HomeNewComponent implements OnDestroy, OnInit {
     this.router.navigate([path]);
   }
   openBottomSheet(): void {
-    console.log('clci');
-    
     this._bottomSheet.open(ShortbybottomSheetComponent);
   }
   ngOnDestroy(): void {

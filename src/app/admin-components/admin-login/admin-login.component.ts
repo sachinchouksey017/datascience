@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../../../_service/user_service/user.service';
+import { UtilityService } from '../../../_service/utility_service/utility.service';
 
 const loginDetails = {
   emailId: '',
@@ -21,7 +23,7 @@ export class AdminLoginComponent implements OnInit {
   Validators.email,
   Validators.pattern('^([a-zA-Z0-9][.-]?)+@([a-zA-Z0-9]+[.-]?)*[a-zA-Z0-9][.][a-zA-Z]{2,3}$')]);
   password = new FormControl(loginDetails.password, [Validators.required, Validators.minLength(5), this.noWhitespaceValidator]);
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UserService, private utility: UtilityService) { }
 
   ngOnInit() {
   }
@@ -51,43 +53,24 @@ export class AdminLoginComponent implements OnInit {
     return isValid ? null : { 'whitespace': true };
   }
   login() {
-    this.password.markAsTouched;
-    // if (!this.password.hasError('minlength') && !this.email.hasError('email')) {
-    //   console.log(this.password);
+    if (this.email.invalid || this.password.invalid) {
+      this.email.markAsTouched();
+      this.password.markAsTouched();
+    } else {
+      this.userService.loginCommon({ email: this.email.value, password: this.password.value }).subscribe(data => {
+        this.utility.openSnackBar('login successFull');
+        console.log(data);
+        if (data['isAdmin']) {
+          this.router.navigate(['adminpanel']);
+        } else {
+          this.router.navigate(['dashboard']);
+        }
 
-    //   this.disableSubmit = true;
-    //   const loginDetails = new Login();
-    //   loginDetails.emailId = this.email.value;
-    //   loginDetails.password = this.password.value;
-    //   let OBJ = {
-    //     'user': {
-    //       'email': loginDetails.emailId,
-    //       'password': loginDetails.password
-    //     }
-    //   };
+      }, err => {
+        this.utility.openSnackBar('login unsuccessFull');
 
-    //   console.log(OBJ);
-
-      // this.usersevice.login(OBJ).subscribe(response => {
-      //   console.log(response + JSON.stringify(response));
-      //   localStorage.setItem('token', String((response as any).token));
-      //   localStorage.setItem('emailId', String((response as any).email));
-      //   this.router.navigateByUrl('/projects');
-      //   this.spinnerService.hide();
-      // },
-      //   (error) => {
-      //     this.disableSubmit = false;
-      //     console.log(error.error.code);
-      //     console.log(error.error.message);
-
-      //     this.spinnerService.hide();
-
-      //     this.utilityService.showToast(ToastType.ERROR, error.error.message);
-      //   }
-
-      // );
-
-    // }
+      });
+    }
   }
   register() {
     this.router.navigate(['/register']);

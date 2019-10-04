@@ -1,7 +1,7 @@
 <mat-toolbar class="toolbar" fxLayout='row' [class.mat-elevation-z8]="isActive">
   <div fxLayout='row' fxFlex fxLayoutAlign="none center">
-    <div style='cursor: pointer' (click)="navigate()">
-      <img src='../../../assets/images/logo.png'>
+    <div style='cursor: pointer' (click)="navigate('adminpanel')">
+      <img style="cursor: pointer" src='../../../assets/images/logo.png'>
     </div>
     <div fxFlexOffset='1.875em'>
       <mat-form-field class="search" fxFlex='530px' fxFlex.md='280px' fxFlex.sm='200px' [style.font-size.px]="'13'"
@@ -47,8 +47,8 @@
         </span>
       </div>
       <mat-divider></mat-divider>
-      <div class="content" [style.height.px]=myInnerHeight style="overflow: auto" fxLayout="row wrap" fxLayoutGap='15px'>
-        <mat-card (click)="showCardDescription(i)" [ngClass]="selectedCardId == i ? 'cardSelect':'cardNotSelect'" class="card " *ngFor='let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]'>
+      <div class="content" [style.height.px]=myInnerHeight style="overflow: auto" fxLayout="row wrap" fxLayout.xs='column' fxLayoutGap='15px'>
+        <mat-card (click)="showCardDescription(i)"  [ngClass]="selectedCardId == i ? 'cardSelect':'cardNotSelect'" class="card " *ngFor='let i of [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]'>
           <div fxLayout='column'>
             <div fxLayout='row' class="cardFirstRow">
               <div fxFlex class="name">

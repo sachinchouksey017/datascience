@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayoutGap='15px'>
-  <mat-card class="card" *ngFor='let i of [1,1,1,1]'>
+  <mat-card class="card" *ngFor='let i of datasets'>
     <div fxLayout='column'>
       <div fxLayout='row'>
         <div>
@@ -40,7 +40,7 @@
             <button class="button" mat-stroked-button>
               <img style="max-height: 16px" src="../../../assets/icons/bill.png" alt="bills">
               Bill</button>
-            <button routerLink='../../Datasets' class="button" mat-stroked-button>
+            <button (click)="showUserDatasets(i.id)" class="button" mat-stroked-button>
               <img style="max-height: 16px" src="../../../assets/icons/database.png" alt="Datasets">
               Datasets</button>
             <button class="button" mat-stroked-button>Intances</button>

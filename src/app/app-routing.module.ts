@@ -12,27 +12,28 @@ import { DatasetsComponent } from './admin-components/datasets/datasets.componen
 import { UserReportComponent } from './admin-components/user-report/user-report.component';
 import { InstancesComponent } from './admin-components/instances/instances.component';
 const routes: Routes = [
-
   {
     path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
+  {
+    path: 'dashboard',
     component: HomeNewComponent,
     resolve: {
       datasets: DatasetsResolverService
     }
   }
   , {
-    path: 'old',
-    component: HomeComponent,
-    resolve: {
-      datasets: DatasetsResolverService
-    }
+    path: 'login',
+    component: AdminLoginComponent
   },
   {
     path: 'submitdataset',
     component: SubmitDatasetComponent
   },
   {
-    path: 'Datasets',
+    path: 'Datasets/:userId',
     component: DatasetsComponent,
   },
   {
@@ -41,7 +42,7 @@ const routes: Routes = [
     children: [
       {
         path: '',
-        redirectTo: 'instances',
+        redirectTo: 'user_report',
         pathMatch: 'full'
       },
       {
