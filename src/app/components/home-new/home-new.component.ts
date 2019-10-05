@@ -19,7 +19,7 @@ export class HomeNewComponent implements OnDestroy, OnInit {
   mobileQuery: MediaQueryList;
   isActive = true;
   datasets = []
-  sort: string;
+  sort = 'Popularity';
   selectedValue: string;
   foods: Food[] = [
     { value: 'Relevance', viewValue: 'Relevance' },

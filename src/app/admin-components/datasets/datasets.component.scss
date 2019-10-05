@@ -61,6 +61,14 @@
 
     .notSelectedHead {
       color: darkgrey;
+      .count {
+        background-color: darkgrey;
+        border-radius: 50%;
+        padding: 2px;
+        font-size: 10px;
+        font-weight: bold;
+        color: white;
+      }
     }
   }
 
@@ -139,7 +147,14 @@
 
   }
 
-
+.cardDescriptionMain{
+  -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: fadeInRightBig;
+    animation-name: fadeInRightBig;
+}
 
   .cardDescription {
     min-width: 42.1875em;
@@ -251,7 +266,7 @@
 }
 
 @media screen and (max-height: 850px) {
-  .carDescriptionMain {
+  .cardDescriptionMain {
     overflow: auto;
     max-height: 720px;
   }
@@ -272,7 +287,7 @@
     padding-top: 4em;
   }
 
-  .carDescriptionMain {
+  .cardDescriptionMain {
     max-height: 601px;
 
     .cardDescription {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
+import {MAT_BOTTOM_SHEET_DATA} from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-bottom-sheet-dataset-description',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BottomSheetDatasetDescriptionComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_BOTTOM_SHEET_DATA) public selectedCardObject: any) {
+    console.log(selectedCardObject,'data in bottom sheet');
+    
+   }
 
   ngOnInit() {
   }

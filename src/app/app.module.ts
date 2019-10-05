@@ -19,8 +19,22 @@ import { InstancesComponent } from './admin-components/instances/instances.compo
 import { UserReportComponent } from './admin-components/user-report/user-report.component';
 import { ShortbybottomSheetComponent } from './components/shortbybottom-sheet/shortbybottom-sheet.component';
 import { BottomSheetDatasetDescriptionComponent } from './admin-components/bottom-sheet-dataset-description/bottom-sheet-dataset-description.component';
+import { NgxUiLoaderModule } from 'ngx-ui-loader';
+
 @NgModule({
-  declarations: [AppComponent, HomeComponent, HeaderComponent, SubmitDatasetComponent, AdminPanelComponent, HomeNewComponent, AdminLoginComponent, AdminDashboardComponent, DatasetsComponent, InstancesComponent, UserReportComponent, ShortbybottomSheetComponent, BottomSheetDatasetDescriptionComponent],
+  declarations: [AppComponent,
+    HomeComponent,
+    HeaderComponent,
+    SubmitDatasetComponent,
+    AdminPanelComponent,
+    HomeNewComponent,
+    AdminLoginComponent,
+    AdminDashboardComponent,
+    DatasetsComponent,
+    InstancesComponent,
+    UserReportComponent,
+    ShortbybottomSheetComponent,
+    BottomSheetDatasetDescriptionComponent],
   imports: [BrowserModule, AppRoutingModule, AppMaterial, HttpClientModule],
   providers: [HttpClientModule],
   bootstrap: [AppComponent],

@@ -10,4 +10,10 @@ export class AdminService {
   getUserDetails() {
     return this.http.getService('admin_panel');
   }
+  getUserDatasets(id) {
+    return this.http.getService('datasets/' + id);
+  }
+  approveRejectDataset(endPointUrl) {
+    return this.http.postService({}, 'approved_datasets');
+  }
 }

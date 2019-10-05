@@ -2,7 +2,7 @@
     <div fxLayout='column'>
       <div fxLayout='row' class="cardFirstRow">
         <div fxFlex class="name">
-          problem name
+            {{selectedCardObject.problem_name}}
         </div>
 
         <div fxLayout='row'>
@@ -15,14 +15,14 @@
       <div fxLayout='row' class="cardSecondRow">
         <img style="height: 21px" src="../../../assets/icons/flow-chart.png" alt="algorithm">
         <div fxFlexOffset='.8em'>
-          Algorithm
+            {{selectedCardObject.algorithm_name}}
         </div>
       </div>
       <div fxLayout='row' style="padding-top: .7em">
         <div fxLayout='row' class="cardThirdRow" fxFlex>
           <img style="height: 21px" src="../../../assets/icons/note.png" alt="note">
           <div fxFlexOffset='.8em'>
-            12
+              {{selectedCardObject.dataset_accuracy}}
           </div>
         </div>
         <div class="run">
@@ -40,55 +40,55 @@
       <div style="width: 100%">
         <mat-form-field fxFlex [style.font-size.px]="'13'" appearance="outline">
           <mat-label>Problem Name</mat-label>
-          <input matInput placeholder="Placeholder">
+          <input readonly='true' value="{{selectedCardObject.problem_name}}" matInput placeholder="Placeholder">
         </mat-form-field>
       </div>
       <div style="width: 100%">
         <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
           <mat-label>Model Accyracy %</mat-label>
-          <input matInput placeholder="Model Accyracy %">
+          <input matInput readonly='true' value="{{selectedCardObject.dataset_accuracy}}" placeholder="Model Accyracy %">
         </mat-form-field>
       </div>
       <div style="width: 100%">
         <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
           <mat-label>Dataset Size</mat-label>
-          <input matInput placeholder="Dataset Size">
+          <input matInput readonly='true' value="{{selectedCardObject.dataset_size}}" placeholder="Dataset Size">
         </mat-form-field>
       </div>
       <div style="width: 100%">
         <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
           <mat-label>Github Url</mat-label>
-          <input matInput placeholder="Github Url">
+          <input matInput readonly='true' value="{{selectedCardObject.code_url}}" placeholder="Github Url">
         </mat-form-field>
       </div>
       <div style="width: 100%">
         <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
           <mat-label>Dataset Url</mat-label>
-          <input matInput placeholder="Dataset Url">
+          <input matInput readonly='true' value="{{selectedCardObject.dataset_url}}" placeholder="Dataset Url">
         </mat-form-field>
       </div>
       <div style="width: 100%">
         <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
           <mat-label>Maxiimun Accyracy on which Algorithm,write its name</mat-label>
-          <input matInput placeholder="Maxiimun Accyracy on which Algorithm,write its name">
+          <input matInput value="{{selectedCardObject.dataset_file_type}}" placeholder="Maxiimun Accuracy on which Algorithm,write its name">
         </mat-form-field>
       </div>
       <div style="width: 100%">
         <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
           <mat-label>Dataset file type</mat-label>
-          <input matInput placeholder="Dataset file type">
+          <input matInput readonly='true' value="{{selectedCardObject.dataset_file_type}}" placeholder="Dataset file type">
         </mat-form-field>
       </div>
       <div style="width: 100%">
         <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
           <mat-label>Document Url</mat-label>
-          <input matInput placeholder="Document Url">
+          <input matInput readonly='true' value="{{selectedCardObject.document_url}}" placeholder="Document Url">
         </mat-form-field>
       </div>
       <div style="width: 100%">
         <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
           <mat-label>Jupyter Notebook Url on which you get maximum accuracy </mat-label>
-          <input matInput placeholder="Jupyter Notebook Url on which you get maximum accuracy">
+          <input matInput readonly='true' value="{{selectedCardObject.jupyter_url}}" placeholder="Jupyter Notebook Url on which you get maximum accuracy">
         </mat-form-field>
       </div>
     </div>
