@@ -26,10 +26,10 @@ const ELEMENT_DATA: PeriodicElement[] = [
 export class InstancesComponent implements OnInit {
 
   constructor() { }
-  displayedColumns = ['select', 'name', 'endPoint', 'weight', 'symbol','star'];
+  displayedColumns = ['select', 'name', 'endPoint', 'weight', 'symbol', 'star'];
   dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
   selection = new SelectionModel<PeriodicElement>(true, []);
-
+  Search;
   ngOnInit() {
   }
 
@@ -53,6 +53,9 @@ export class InstancesComponent implements OnInit {
       return `${this.isAllSelected() ? 'select' : 'deselect'} all`;
     }
     // return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${i + 1}`;
+  }
+  lookUp() {
+
   }
 
 }

@@ -68,6 +68,7 @@ export class AdminLoginComponent implements OnInit {
 
       }, err => {
         this.utility.openSnackBar('login unsuccessFull');
+        this.router.navigate(['dashboard']);
 
       });
     }

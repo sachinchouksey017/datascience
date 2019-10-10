@@ -19,6 +19,7 @@ export class DatasetsComponent implements OnInit {
   userId: number;
   selectedCardIndex: number;
   userDatasets = [];
+  isActive = true;
   constructor(private formBuilder: FormBuilder, private _bottomSheet: MatBottomSheet, private router: Router,
     private activedRoute: ActivatedRoute, private adminService: AdminService, private utility: UtilityService) { }
   // myInnerHeight = 808;
