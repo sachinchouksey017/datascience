@@ -8,6 +8,7 @@ import { UtilityService } from '../../../_service/utility_service/utility.servic
   styleUrls: ['./submit-dataset.component.scss']
 })
 export class SubmitDatasetComponent implements OnInit {
+  timeSelect;
   submitForm: FormGroup;
   constructor(private formBuilder: FormBuilder, private userservice: UserService, private utilityService: UtilityService) { }
 
@@ -88,5 +89,8 @@ export class SubmitDatasetComponent implements OnInit {
       }
     });
   }
+  fileTypeSelected(event: Event) {
+    console.log(event);
 
+  }
 }

@@ -30,16 +30,23 @@
         Price
       </div>
     </div>
-    <div class="heightFitContent">
-      <button mat-button>Hello,Sign in
+    <div class="heightFitContent" class="logout">
+      <button (click)='openLoginDialog()' mat-button>Hello,Sign in
+      </button>
+      <button mat-icon-button [matMenuTriggerFor]="profile">
         <mat-icon>account_circle
         </mat-icon>
       </button>
+      <mat-menu #profile="matMenu">
+        <button mat-menu-item>Profile</button>
+        <button mat-menu-item>Contact us</button>
+        <button mat-menu-item>About us</button>
 
+      </mat-menu>
     </div>
   </mat-toolbar>
 
-  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
+  <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 84">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56" class="drawer" opened>
       <div class="sidebar-wrapper">
@@ -145,8 +152,10 @@
                   <mat-icon>more_vert</mat-icon>
                 </div>
               </div>
-              <div fxLayout="row" fxFlex="30%">
-                <mat-icon class="info">tune</mat-icon>
+              <div fxLayout="row" fxFlex="30%" fxLayoutAlign='none center'>
+                <!-- <mat-icon class="info">email</mat-icon> -->
+              <img style="height: 18px ; margin-left: 10px" src="../../../assets/icons/flow-chart.png" alt="algorithm">
+
                 <span class="type">{{i.dataset_file_type}}</span>
               </div>
               <div fxLayout="row" fxLayoutAlign='space-between center'>
@@ -164,6 +173,11 @@
           </div>
         </div>
       </div>
+
     </mat-sidenav-content>
+
   </mat-sidenav-container>
+
+  <app-footer></app-footer>
+
 </div>

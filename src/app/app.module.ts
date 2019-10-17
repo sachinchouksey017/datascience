@@ -20,6 +20,17 @@ import { UserReportComponent } from './admin-components/user-report/user-report.
 import { ShortbybottomSheetComponent } from './components/shortbybottom-sheet/shortbybottom-sheet.component';
 import { BottomSheetDatasetDescriptionComponent } from './admin-components/bottom-sheet-dataset-description/bottom-sheet-dataset-description.component';
 import { NgxUiLoaderModule } from 'ngx-ui-loader';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { DialogComponent } from './components/dialog/dialog.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { FaqComponent } from './admin-components/faq/faq.component';
+import { ResourcesComponent } from './admin-components/resources/resources.component';
+import { AddResourceComponent } from './admin-components/add-resource/add-resource.component';
+import { AddFAQComponent } from './admin-components/add-faq/add-faq.component';
+import { InterviewQuestionComponent } from './admin-components/interview-question/interview-question.component';
 
 @NgModule({
   declarations: [AppComponent,
@@ -34,10 +45,22 @@ import { NgxUiLoaderModule } from 'ngx-ui-loader';
     InstancesComponent,
     UserReportComponent,
     ShortbybottomSheetComponent,
-    BottomSheetDatasetDescriptionComponent],
+    BottomSheetDatasetDescriptionComponent,
+    UserLoginComponent,
+    UserRegisterComponent,
+    DialogComponent,
+    FooterComponent,
+    ContactUsComponent,
+    AboutUsComponent,
+    FaqComponent,
+    ResourcesComponent,
+    AddResourceComponent,
+    AddFAQComponent,
+    InterviewQuestionComponent],
   imports: [BrowserModule, AppRoutingModule, AppMaterial, HttpClientModule],
   providers: [HttpClientModule],
   bootstrap: [AppComponent],
-  entryComponents: [ShortbybottomSheetComponent, BottomSheetDatasetDescriptionComponent]
+  entryComponents: [ShortbybottomSheetComponent, BottomSheetDatasetDescriptionComponent, DialogComponent, 
+    AddResourceComponent, AddFAQComponent]
 })
 export class AppModule { }

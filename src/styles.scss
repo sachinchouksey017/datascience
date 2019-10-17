@@ -7,5 +7,10 @@ body{
 *{
     
 
-    font-family: Lato, "Helvetica Neue", sans-serif;
+    font-family: Poppins, "Helvetica Neue", sans-serif;
+}
+.loginDialog{
+    .mat-dialog-container{
+        padding: 0;
+    }
 }

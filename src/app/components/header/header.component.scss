@@ -28,3 +28,9 @@
   font-family: Lato;
   font-weight: 500;
 }
+
+@media only screen and (max-width: 960px) {
+  body {
+    background-color: lightblue;
+  }
+}

@@ -1,0 +1,138 @@
+@import '../../scss/color.scss';
+@import '../../scss/constant.scss';
+$linehight:31px;
+
+.datasetsMain {
+  .arrowFlow {
+
+    .notselect {
+      color: darkgrey;
+    }
+
+    .select {
+      color: #404040;
+    }
+  }
+
+  .intancesText {
+    font-size: $_heading_font_size;
+    font-weight: $_heading_font_weight;
+    color: $header_font_color;
+  }
+
+
+  .addButton {
+    color: white;
+    border-color: $common_color;
+    background-color: $common_color;
+    line-height: $linehight;
+
+  }
+
+  .search-div {
+    border-radius: 4px;
+    height: 30px;
+    // width: 375px;
+    border-color: #b1b0b0;
+    border-style: solid;
+    border-width: 1px;
+    display: flex;
+    align-items: center;
+  }
+
+  .search-icon {
+    position: absolute;
+    color: #808080f0;
+    margin-left: 5px;
+  }
+
+  .filterIcon {
+    color: #808080f0;
+
+  }
+
+  .catagoryButtonSelect {
+    background-color: #707070;
+    line-height: 28px;
+    color: $white_color;
+    border-radius: 2px;
+  }
+  .catagoryButtonNotSelect{
+    background-color: #F5F5F5;
+    line-height: 28px;
+    color: #707070;
+    border-radius: 2px;
+    border-color: #F5F5F5;;
+  }
+
+  .search {
+    border: none;
+    margin-left: 40px;
+  }
+}
+
+.tableMain {
+
+  // height: 400px;
+  // overflow: auto;
+  ::ng-deep .mat-table thead {
+    background-color: #fafafa;
+  }
+
+  th {
+    color: rgb(35, 86, 126) !important;
+
+  }
+}
+
+table {
+  width: 100%;
+
+  .mat-column-question {
+    color: #40494D;
+    width: 80%;
+    font-size: 11px;
+    font-family: Segoe UI;
+  }
+
+ 
+
+  .mat-column-star {
+    color: #989FA3;
+    cursor: pointer;
+  }
+}
+
+::ng-deep .mat-checkbox-layout {
+  vertical-align: baseline !important;
+}
+
+::ng-deep .mat-checkbox-inner-container {
+  height: 12px !important;
+  width: 12px !important;
+}
+
+::ng-deep .mat-checkbox-frame {
+  border-width: 1px !important;
+}
+
+.circle {
+  font-size: 14px;
+  margin-right: 5px !important;
+  height: 14px;
+  width: 14px;
+  color: $common_color;
+}
+
+@media only screen and (min-width: 1300px) {
+  table {
+
+    .mat-column-question {
+      font-size: 14px;
+    }
+
+    .mat-column-link {
+      font-size: 14px;
+    }
+  }
+}

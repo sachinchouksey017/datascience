@@ -5,6 +5,9 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { DatasetsharedServiceService } from '../../../_service/datasetshared-service.service';
 import { MatBottomSheet, MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { ShortbybottomSheetComponent } from '../shortbybottom-sheet/shortbybottom-sheet.component';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
+
 export interface Food {
   value: string;
   viewValue: string;
@@ -32,7 +35,7 @@ export class HomeNewComponent implements OnDestroy, OnInit {
   private _mobileQueryListener: () => void;
 
   constructor(changeDetectorRef: ChangeDetectorRef, media: MediaMatcher, private router: Router, private ActiveRoute: ActivatedRoute,
-    private sharedService: DatasetsharedServiceService, private _bottomSheet: MatBottomSheet) {
+    private sharedService: DatasetsharedServiceService, private _bottomSheet: MatBottomSheet, public dialog: MatDialog) {
     this.mobileQuery = media.matchMedia('(max-width: 600px)');
     this._mobileQueryListener = () => changeDetectorRef.detectChanges();
     this.mobileQuery.addListener(this._mobileQueryListener);
@@ -41,6 +44,7 @@ export class HomeNewComponent implements OnDestroy, OnInit {
     this.ActiveRoute.data.subscribe(data => {
       console.log('data frm service ', data.datasets);
       this.datasets = data.datasets;
+      this.datasets = this.datasets.concat(this.datasets)
       this.sharedService.changeMessage(this.datasets);
     })
 
@@ -53,6 +57,18 @@ export class HomeNewComponent implements OnDestroy, OnInit {
   }
   openBottomSheet(): void {
     this._bottomSheet.open(ShortbybottomSheetComponent);
+  }
+  openLoginDialog() {
+    const dialogRef = this.dialog.open(DialogComponent, {
+      // width: '250px',
+      data: { name: '', animal: '' },
+      panelClass: 'loginDialog'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      // this.animal = result;
+    });
   }
   ngOnDestroy(): void {
     this.mobileQuery.removeListener(this._mobileQueryListener);

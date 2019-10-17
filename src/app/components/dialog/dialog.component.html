@@ -1,0 +1,2 @@
+<app-user-login *ngIf=showLogin (loginEvent)="showLogin=$event"></app-user-login>
+<app-user-register *ngIf=!showLogin (registerEvent)='showLogin=$event'></app-user-register>

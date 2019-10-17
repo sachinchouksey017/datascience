@@ -1,0 +1,31 @@
+<div fxLayout='row' fxLayoutAlign='center center'>
+    <mat-card class="btn-apply" mat-button>{{text}}</mat-card>
+  </div>
+  <div class="main" fxLayout='column'>
+      <mat-form-field [ngStyle.lg]="{'width': '600px'}" [ngStyle.xs]="{'width': '250px'}" [ngStyle.sm]="{'width': '500px'}"
+      [ngStyle.md]="{'width': '600px'}" [style.font-size.px]="'13'" appearance="outline">
+      <mat-label>Question</mat-label>
+      <textarea matInput placeholder="Question"></textarea>
+    </mat-form-field>
+    
+    <mat-form-field [ngStyle.lg]="{'width': '600px'}" [ngStyle.xs]="{'width': '250px'}" [ngStyle.sm]="{'width': '500px'}"
+      [ngStyle.md]="{'width': '600px'}" [style.font-size.px]="'18'" appearance="outline">
+      <mat-label>Answer</mat-label>
+      <textarea matInput placeholder="Answer"></textarea>
+     
+    </mat-form-field>
+    <div class="radio" fxLayout='row' fxLayoutAlign='none center'>
+      <h5 class="category">Category</h5>
+        <mat-radio-group fxFlexOffset='10px' aria-label="Select an option">
+            <mat-radio-button value="1">Option 1</mat-radio-button>
+            <mat-radio-button value="2">Option 2</mat-radio-button>
+          </mat-radio-group>
+    </div>
+    <button class="uploadButton" mat-stroked-button>Upload csv</button>
+  <div fxLayout='row' fxLayoutAlign='end center'>
+      <button (click)='closeDialog()' class="cancelButton" mat-button>Cancel</button>
+    <button class="submitButton" mat-stroked-button>Submit</button>
+  
+  </div>
+  </div>
+  

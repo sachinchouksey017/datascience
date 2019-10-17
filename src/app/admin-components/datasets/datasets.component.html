@@ -162,8 +162,15 @@
           <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
             <mat-label>Dataset file type</mat-label>
             <input matInput readonly='true' value="{{selectedCardObject.dataset_file_type}}" placeholder="Dataset file type">
+            <mat-select (selectionChange)="TimeSelected($event)" tabindex="2" placeholder="Time Of Call"
+            [(value)]='timeSelect'>
+            <mat-option value="9 am - 1 pm" disabled={{timeFlag1}}>9 am - 1 pm</mat-option>
+            <mat-option value="2 pm - 6 pm" disabled={{timeFlag2}}>2 pm - 6 pm</mat-option>
+  
+          </mat-select>
           </mat-form-field>
         </div>
+     
         <div style="width: 100%">
           <mat-form-field [style.font-size.px]="'13'" fxFlex appearance="outline">
             <mat-label>Document Url</mat-label>

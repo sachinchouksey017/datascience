@@ -11,10 +11,18 @@ import { AdminDashboardComponent } from './admin-components/admin-dashboard/admi
 import { DatasetsComponent } from './admin-components/datasets/datasets.component';
 import { UserReportComponent } from './admin-components/user-report/user-report.component';
 import { InstancesComponent } from './admin-components/instances/instances.component';
+import { UserLoginComponent } from './components/user-login/user-login.component';
+import { UserRegisterComponent } from './components/user-register/user-register.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ResourcesComponent } from './admin-components/resources/resources.component';
+import { FaqComponent } from './admin-components/faq/faq.component';
+import { InterviewQuestionComponent } from './admin-components/interview-question/interview-question.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'dashboard',
     pathMatch: 'full'
   },
   {
@@ -23,10 +31,6 @@ const routes: Routes = [
     resolve: {
       datasets: DatasetsResolverService
     }
-  }
-  , {
-    path: 'login',
-    component: AdminLoginComponent
   },
   {
     path: 'submitdataset',
@@ -54,9 +58,25 @@ const routes: Routes = [
       }, {
         path: 'instances',
         component: InstancesComponent
+      },
+      {
+        path: 'resources',
+        component: ResourcesComponent
+      }, {
+        path: 'FAQ',
+        component: FaqComponent
+      }, {
+        path: 'interview_queston',
+        component: InterviewQuestionComponent
       }
     ]
 
+  }, {
+    path: 'contact-us',
+    component: ContactUsComponent
+  }, {
+    path: 'about-us',
+    component: AboutUsComponent
   }
 ];
 

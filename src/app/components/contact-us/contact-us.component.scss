@@ -1,0 +1,88 @@
+$_heading_font_size:18px;
+$_cardheading_font_size:16px;
+$_inputbox_font_size:14px;
+$_subtext_font_size:12px;
+$_tableheading_font_size:10px;
+$_heading_font_weight:600;
+$_button_font_weight:400;
+$_button_border_radius:none;
+$_heading_border_radius:10px;
+$font_family:Lato;
+$primary_color:#0921B6;
+$background_color:#F7F7F7;
+$_input_font_color:#40494D;
+$button_font_color:#FFFFFF;
+$subtext_font_color:#143A50;
+$header_font_color:#737475;
+$common_color:#000080de;
+$project_color:#2851A3;
+$white_color:#FFFFFF;
+.firstDiv{
+    background-color: #0E5AB1;
+    padding: 6.25em 0;
+    .Head{
+        font-size: 38px;
+    }
+    .Sub_Head{
+        font-size: 26px;
+        font-weight:  100;
+    }
+}
+.secondDiv{
+    padding: 20px 0 40px;
+}
+.sameCss{
+    width: fit-content;
+    color: $white_color;
+    
+}
+.margin_off{
+    margin: 0;
+}
+
+.matArea{
+    font-size: 13px;
+}
+.sendButton{
+    width: 100%;
+    color: white;
+    border-radius: 5px;
+    background-color: #EC8B03;
+}
+.map{
+    width: 300px;
+    img{
+        width: 100%;
+    }
+    .address{
+        color: #585858;
+        font-family: $font_family;
+        font-size: $_subtext_font_size;
+        font-weight:  100;
+    }
+    .contact{
+        color: $project_color;
+    }
+}
+
+
+
+@media only screen and (max-width: 600px) {
+    .firstDiv{
+        padding: 6.25em 0;
+        .Head{
+            font-size: 20px;
+        }
+        .Sub_Head{
+            font-size: 12px;
+        }
+    }
+    .map{
+       margin-top: 20px;
+    }
+    .secondDiv{
+        .form{
+            width: 90%;
+        }
+    }
+  }

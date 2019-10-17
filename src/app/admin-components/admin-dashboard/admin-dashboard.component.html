@@ -34,8 +34,8 @@
             </div>
           </div>
         </a>
-        <a mat-list-item routerLink="." [ngClass]="selected == 'Report' ? 'Selected' : 'notSelected'"
-          (click)="goToPage('Report')">
+        <a mat-list-item routerLink="user_report" [ngClass]="selected == 'user_report' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('user_report')">
           <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
             <mat-icon class="icon">
               event_note
@@ -56,8 +56,8 @@
             </div>
           </div>
         </a>
-        <a mat-list-item routerLink="." [ngClass]="selected == 'Resources' ? 'Selected' : 'notSelected'"
-          (click)="goToPage('Resources')">
+        <a mat-list-item routerLink="resources" [ngClass]="selected == 'resources' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('resources')">
           <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
             <mat-icon class="icon">
               brightness_7
@@ -66,8 +66,8 @@
               Resources
             </div>
           </div>
-        </a> <a mat-list-item routerLink="." [ngClass]="selected == 'Questions' ? 'Selected' : 'notSelected'"
-          (click)="goToPage('Questions')">
+        </a> <a mat-list-item routerLink="interview_queston" [ngClass]="selected == 'interview_queston' ? 'Selected' : 'notSelected'"
+          (click)="goToPage('interview_queston')">
           <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
             <mat-icon class="icon">
               brightness_7
@@ -76,7 +76,7 @@
               Interview Questions
             </div>
           </div>
-        </a> <a mat-list-item routerLink="." [ngClass]="selected == 'FAQ' ? 'Selected' : 'notSelected'"
+        </a> <a mat-list-item routerLink="FAQ" [ngClass]="selected == 'FAQ' ? 'Selected' : 'notSelected'"
           (click)="goToPage('FAQ')">
           <div class="sidnavButton" fxLayout='row' fxLayoutAlign="start center">
             <mat-icon class="icon">

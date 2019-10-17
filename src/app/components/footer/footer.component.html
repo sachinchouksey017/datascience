@@ -1,0 +1,45 @@
+<div fxLayout='column'>
+  <div class="footerFirstText" fxLayout='row' fxLayout.xs='column' fxLayoutAlign='space-around center'>
+    <div fxFlex='45' fxFlex.xs='100' ngStyle.xs="width:100%;" fxLayout='row' fxLayoutAlign='space-around start'>
+      <div fxLayout='column'>
+        <h5 class="footerText marginOff">
+          HOME
+        </h5>
+        <h5 class="footerText marginOff">Datasets</h5>
+        <h5 class="footerText marginOff">DS Treasure</h5>
+        <h5 class="footerText marginOff">Price</h5>
+      </div>
+      <div fxLayout='column'>
+        <h5 class="footerText marginOff" routerLink='../submitdataset'>
+          Submit dataset 
+        </h5>
+        <h5 class="footerText marginOff" routerLink='../contact-us'>Contact us</h5>
+        <h5 class="footerText marginOff" routerLink='../about-us'>about us</h5>
+      </div>
+    </div>
+    <div fxFlex='30' fxFlex.sm='40' fxFlex.xs='100' fxLayout="column" fxLayoutAlign="space-around start">
+      <h5>GET Updates</h5>
+      <div style="width: 100%" fxLayout="row" fxLayoutAlign="space-between center" >
+        <mat-form-field fxFlex=45>
+          <input matInput placeholder="First Name">
+        </mat-form-field>
+        <mat-form-field fxFlex=45>
+          <input matInput placeholder="Last Name">
+        </mat-form-field>
+      </div>
+      <mat-form-field style="width: 100%">
+        <input matInput placeholder="Email">
+      </mat-form-field>
+      <button class="subscribeButton" mat-stroked-button>SUBSCRIBE</button>
+
+    </div>
+  </div>
+  <div class="lastText" fxLayout='row' fxLayout.xs='column' fxLayoutAlign='space-around center '>
+    <h5 fxLayout class="privacyText">
+      PRIVACY POLICY &nbsp; &nbsp; | &nbsp; &nbsp; TERMS OF SERVICE
+    </h5>
+    <h5 class="privacyText">
+      © 2019 GeekeeDataScience. All Rights Reserved.
+    </h5>
+  </div>
+</div>

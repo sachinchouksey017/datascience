@@ -1,0 +1,53 @@
+<div class="register-mat-card">
+
+  <div fxLayout="column" fxLayoutAlign="center center">
+    <h3 class="head">
+      Welcome to <b>Geekee<b class="dataScienceText">DataScience</b> </b>
+    </h3>
+    <div class="inputs">
+
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>User Name</mat-label>
+        <input matInput autocomplete="off" maxlength="254" [formControl]="userName">
+        <!-- <mat-error>This isn't Valid Email</mat-error> -->
+        <mat-error *ngIf="userName.invalid">{{getErrorMessageUserName()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Password</mat-label>
+        <input matInput [type]="hide ? 'text' : 'password'" autocomplete="off" maxlength="100" [formControl]="password">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+        </mat-icon>
+        <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Confirm Password</mat-label>
+        <input matInput [type]="cHide ? 'text' : 'password'" autocomplete="off" maxlength="100" [formControl]="confirmpassword">
+        <mat-icon matSuffix (click)="cHide = !cHide">{{hide ? 'visibility' : 'visibility_off'}}
+        </mat-icon>
+        <mat-error *ngIf="confirmpassword.invalid">{{getErrorMessageConfirmPassword()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Email Id</mat-label>
+        <input matInput autocomplete="off" maxlength="254" [formControl]="email">
+        <!-- <mat-error>This isn't Valid Email</mat-error> -->
+        <mat-error *ngIf="email.invalid">{{getErrorMessageEmail()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Contact</mat-label>
+        <input matInput autocomplete="off" maxlength="10" [formControl]="contact">
+        <!-- <mat-error>This isn't Valid Email</mat-error> -->
+        <mat-error *ngIf="contact.invalid">{{getErrorMessagePhoneNumber()}}</mat-error>
+      </mat-form-field>
+    
+      <div class="button-div">
+        <button mat-button class="login-button" (click)="login()"
+          [disabled]="userName.invalid || password.invalid">Create Account </button>
+        <span class="createAccount">
+          Already having account <a class="forgot" (click)="register()"><u class="link">Login</u></a>
+        </span>
+      </div>
+  
+    </div>
+
+  </div>
+</div>

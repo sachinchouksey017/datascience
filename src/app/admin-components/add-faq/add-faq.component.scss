@@ -1,0 +1,70 @@
+@import '../../scss/color.scss';
+@import '../../scss/constant.scss';
+.btn-apply {
+  color: white;
+  background-color: $common_color;
+  font-size: medium;
+  font-weight: bold;
+  margin-top: -25px;
+  position: absolute;
+  padding: 14px 45px;
+  z-index: 9;
+}
+.main{
+    padding: 35px 10px 0px 10px;
+}
+
+.radio {
+  .category {
+      color: #143A50;
+      font-size: 15px;
+      font-family: Segoe UI;
+      margin: 0;
+      height: fit-content;
+  }
+
+  .mat-radio-button~.mat-radio-button {
+    margin-left: 16px;
+    color: #143A50;
+  }
+  .mat-radio-group{
+    color: #143A50;
+
+  }
+}
+.uploadButton{
+    width: fit-content;
+    background-color: #F5F5F5;
+    color: #40494D;
+    font-size: 12px;
+    margin-top: 20px;
+}
+.cancelButton{
+color: #658292;
+font-size: 18px;
+}
+.submitButton{
+color: $white_color;
+background-color: $common_color;
+font-size: 18px;
+font-family: 'Segoe UI';
+}
+
+@media only screen and (max-width: 330px) {
+
+  .btn-apply {
+
+    padding: 4px 4px;
+  }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+  .btn-apply {
+
+    padding: 8px 25px;
+  }
+
+
+}

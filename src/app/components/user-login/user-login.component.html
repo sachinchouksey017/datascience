@@ -1,0 +1,47 @@
+
+  <div class="login-mat-card">
+
+      <div fxLayout="column" fxLayoutAlign="center center">
+          <div style="padding-bottom:10px">
+              <img src="../../../assets/images/bigLogo.jpg" alt="logo">
+
+          </div>
+
+          <div class="inputs">
+              <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>User Name</mat-label>
+                  <input matInput autocomplete="off" maxlength="254" [formControl]="userName">
+                  <!-- <mat-error>This isn't Valid Email</mat-error> -->
+                  <mat-error *ngIf="userName.invalid">{{getErrorMessageEmail()}}</mat-error>
+              </mat-form-field>
+          </div>
+          <div class="password-div">
+              <mat-form-field appearance="outline" class="form-field">
+                  <mat-label>Password</mat-label>
+                  <input matInput [type]="hide ? 'text' : 'password'" autocomplete="off" maxlength="100"
+                      [formControl]="password">
+                  <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}
+                  </mat-icon>
+                  <mat-error *ngIf="password.invalid">{{getErrorMessagePassword()}}</mat-error>
+              </mat-form-field>
+              <div class="forgot-div">
+
+                  <a class="forgot" (click)="forgotpassword()"><u>?Forgot Password</u></a>
+              </div>
+          </div>
+          <div class="button-div">
+              <button mat-button class="login-button" (click)="login()"
+                  [disabled]="userName.invalid || password.invalid">Login</button>
+                  <span class="createAccount">
+                    Create an account   <a class="forgot" (click)="register()"><u class="link">Register</u></a>
+                  </span>
+          </div>
+          <!-- <div class="forgot-div"  fxLayoutAlign="center center" >
+
+          <a class="forgot" (click)="register()"><u>Create Account?Click Here</u></a>
+      </div> -->
+
+      </div>
+    </div>
+
+

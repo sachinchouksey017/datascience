@@ -12,27 +12,34 @@
         <mat-icon matPrefix>search</mat-icon>
       </mat-form-field>
     </div>
-    <div class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
+    <div class="heightFitContent fontFamily text" fxFlexOffset='1.875em'>
       Datasets
     </div>
-    <!-- <div class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
+    <div *ngIf='wholeHeader' class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
 
-      <button class="fontFamily" mat-button [matMenuTriggerFor]="menu">DS Treasure <mat-icon>keyboard_arrow_down
+      <button class="fontFamily text" mat-button [matMenuTriggerFor]="menu">DS Treasure <mat-icon>keyboard_arrow_down
         </mat-icon></button>
       <mat-menu #menu="matMenu">
         <button mat-menu-item>Item 1</button>
         <button mat-menu-item>Item 2</button>
       </mat-menu>
     </div>
-    <div class="heightFitContent fontFamily" fxFlexOffset='1.875em'>
+    <div *ngIf='wholeHeader' class="heightFitContent fontFamily text" fxFlexOffset='1.875em'>
       Price
-    </div> -->
+    </div>
   </div>
-  <!-- <div class="heightFitContent">
-    <button mat-button>Hello,Sign in
+  <div *ngIf='wholeHeader' class="heightFitContent text" class="logout">
+    <button (click)='openLoginDialog()' mat-button>Hello,Sign in
+    </button>
+    <button mat-icon-button [matMenuTriggerFor]="profile">
       <mat-icon>account_circle
       </mat-icon>
     </button>
+    <mat-menu #profile="matMenu">
+      <button mat-menu-item>Profile</button>
+      <button mat-menu-item>Contact us</button>
+      <button mat-menu-item>About us</button>
 
-  </div> -->
+    </mat-menu>
+  </div>
 </mat-toolbar>

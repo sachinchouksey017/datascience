@@ -1,6 +1,6 @@
 <div style="height: 100%" fxLayout='column'>
   <app-header></app-header>
-  <div fxFlex fxLayout='row' fxLayoutAlign='center center'>
+  <div fxFlex fxLayout='row' fxLayoutAlign='center start'>
     <mat-card fxFlex='80' fxFlex.md='90' fxFlex.sm='100' fxFlex.xs='100' class="cotainer" fxLayout="column">
       <div fxLayout="row" id='head' class="heading about" fxLayoutAlign="start center">
         Submit a Dataset
@@ -10,12 +10,12 @@
         make sure
         we're always bringing you great, new submissions. Use the form to tell us about a startup. We review submissions
         every day,
-        and you'll receive an email if we publish your startup. Submitting to Launching Next is free, but if you want
-        your
-        startup to
-        be considered for publication within 1-business day, we offer a $49 upgrade on the next page.
+        and you'll receive an email if we publish your startup. 
       </div>
-
+ <div class="about" style="margin-top: 5px">
+  Submitting to Launching Next is free, but if you want your startup to
+  be considered for publication within 1 - business day, we offer a $49 upgrade on the next page.
+ </div>
       <div class="form-wrapper">
         <div fxLayout class="about">
           About the Dataset
@@ -46,10 +46,16 @@
               </mat-form-field>
               <mat-form-field fxFlex='48' fxFlex.xs='100' appearance="outline" class="matArea">
                 <mat-label>Dataset file type</mat-label>
-                <input matInput formControlName="dataset_type" required />
+                <mat-select (selectionChange)="fileTypeSelected($event)" tabindex="2" placeholder="Dataset file type"
+                  [(value)]='timeSelect'>
+                  <mat-option value="JSON">JSON
+                    </mat-option>
+                  <mat-option value="CSV" >CSV </mat-option>
+                </mat-select>
                 <mat-error fxFlex *ngIf="!submitForm.controls['dataset_type'].valid && submitForm.controls['dataset_type'].touched">
                   {{ getErrorMessage('dataset_type', 'Dataset Type') }} </mat-error>
               </mat-form-field>
+              
             </div>
 
             <div fxLayout fxLayout.xs='column'>

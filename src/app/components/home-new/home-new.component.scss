@@ -1,3 +1,13 @@
+$_heading_font_size:18px;
+$_cardheading_font_size:16px;
+$_inputbox_font_size:14px;
+$_subtext_font_size:12px;
+$_tableheading_font_size:10px;
+$_heading_font_weight:600;
+$_button_font_weight:400;
+$_button_border_radius:none;
+$_heading_border_radius:10px;
+$font_family:Lato;
 .example-container {
   height: 100%;
 }
@@ -16,8 +26,8 @@
   // overflow-x: hidden;
   // padding-top: 80px;
   .head {
-    color: #292a2d;
-    font-size: 24px;
+    color: #292A2D;
+    font-size: $_heading_font_size;
     font-weight: 500;
     font-style: normal;
     font-stretch: normal;
@@ -32,6 +42,7 @@
     font-style: normal;
     font-stretch: normal;
     line-height: 1.5;
+    font-size: $_subtext_font_size;
     letter-spacing: normal;
     padding: 4% 0% 4% 0%;
     padding-left: 11%;
@@ -44,7 +55,7 @@
   .wrapper-checkbox {
     color: #706f73;
     line-height: 1.5;
-    font-size: 12px;
+    font-size: $_subtext_font_size;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
@@ -72,6 +83,7 @@
 }
 
 .example-toolbar {
+  position: fixed;
   background-color: #ffffff;
   -webkit-box-shadow: 0 10px 10px -10px #bbbaba;
   -moz-box-shadow: 0 10px 10px -10px #bbbaba;
@@ -83,10 +95,13 @@
     padding-bottom: 0.1em !important;
   }
 
+
+
   // ::ng-deep .mat-form-field {
   //   width: 530px;
   // }
 }
+
 
 h1.example-app-name {
   margin-left: 8px;
@@ -97,7 +112,8 @@ h1.example-app-name {
      causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
   flex: 1;
   // z-index: -1 !important;
-
+  overflow: visible;
+  // margin-top: 84px;
 }
 
 .example-is-mobile .example-sidenav-container {
@@ -116,150 +132,164 @@ h1.example-app-name {
 }
 
 .content {
-  padding-left: 50px;
-  padding-top: 20px;
-  padding-right: 20px;
-.sort{
-  padding: 20px;
-  .sortByMain {
-    min-height: 35px;
-    .sortBy {
-      font-weight: 600;
-      padding: 8px 30px 4px 0;
+  padding: 20px 50px 50px 20px;
+
+  .sort {
+    padding: 20px;
+
+    .sortByMain {
+      min-height: 35px;
+
+      .sortBy {
+        font-weight: 600;
+        padding: 8px 30px 4px 0;
+      }
+
+      .clicked {
+        color: #2874f0;
+        cursor: default;
+        border-bottom: 2px solid #2874f0;
+        font-weight: 500;
+        padding: 7px 10px;
+
+      }
+
+      .unclicked {
+        padding: 8px 0 4px;
+        margin: 0 10px;
+        cursor: pointer;
+        color: #878787;
+      }
     }
 
-    .clicked {
-      color: #2874f0;
-      cursor: default;
-      border-bottom: 2px solid #2874f0;
-      font-weight: 500;
-      padding: 7px 10px;
-
-    }
-
-    .unclicked {
-      padding: 8px 0 4px;
-      margin: 0 10px;
+    .submit-button {
+      border-radius: 6px;
+      background-color: #2851a3;
+      color: aliceblue;
+      height: 35px;
+      width: 155px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       cursor: pointer;
-      color: #878787;
     }
   }
-  .submit-button {
-    border-radius: 6px;
-    background-color: #2851a3;
-    color: aliceblue;
-    height: 35px;
-    width: 155px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-  }
-}
 
-.sort-sortBy {
-  padding: 9px 14px;
-  font-size: 14px;
-  color: #282c3f;
-  cursor: pointer;
-  position: relative;
-  width: 255px;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  border-radius: 2px;
-  background-color: #ffffff;
-  border: solid 1px #d4d5d9;
-  ::ng-deep .mat-select-arrow{
-    // visibility: hidden;
-    color: #969696;
+  .sort-sortBy {
+    padding: 9px 14px;
+    font-size: 14px;
+    color: #282c3f;
+    cursor: pointer;
+    position: relative;
+    width: 255px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    border: solid 1px #d4d5d9;
+
+    ::ng-deep .mat-select-arrow {
+      // visibility: hidden;
+      color: #969696;
+    }
   }
-}
 
   // css for cards
-.cardItem {
-  display: flex;
-  flex-direction: row;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
-  width: 300px;
-  height: 115px;
-  border-radius: 2px;
-  .imageIcon {
-    width: 90px;
-    height: 90px;
-    border-radius: 7px;
-    background-color: #000000;
-    margin: 11px;
-  }
-  .name {
-    width: 85%;
-    height: 43px;
-    margin: 5px;
-    font-family: Poppins;
-    font-size: 16px;
-    line-height: 1.25;
-    color: #292a2d;
-    margin-left: 10px;
-    margin-top: 10px;
-  }
-  ::ng-deep .mat-icon {
-    background-repeat: no-repeat;
-    display: inline-block;
-    fill: currentColor;
-    height: 24px;
-    width: 24px;
-    // margin: 11px 0 5px 0;
-  }
-  .icon{
-    margin-top: 10px;
-  }
-  ::ng-deep .info {
-    width: 18%;
-    margin-left: 10px;
-  }
-  .type {
-    width: 40%;
-    height: 15px;
-    font-family: Poppins;
-    font-size: 10px;
-    margin: 14px 2px;
-  }
-  /deep/ .nfc {
-    margin: 5px 10px 0px;
-  }
-  .count {
-    font-size: 10px;
-    font-family: poppins;
-    color: #706f73;
-    margin: 5px 10px 0px;
-  }
-  .run {
-    width: 48.7px;
-    height: 19.3px;
-    border-radius: 5px;
-    border: solid 1px #3ec042;
-    background-color: #ffffff;
+  .cardItem {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    float: left;
-    cursor: pointer;
-    .runtext {
-      font-family: poppins;
-      font-size: 10px;
-      color: #3ec042;
-      text-align: center;
+    flex-direction: row;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+    width: 300px;
+    height: 115px;
+    border-radius: 2px;
+
+    .imageIcon {
+      width: 90px;
+      height: 90px;
+      border-radius: 7px;
+      background-color: #000000;
+      margin: 11px;
     }
-    .playIcon{
-      height: 16px;
-      width: 16px;
+
+    .name {
+      width: 85%;
+      height: 43px;
+      margin: 5px;
+      font-family: Poppins;
       font-size: 16px;
-      color: #3ec042;
+      line-height: 1.25;
+      color: #292a2d;
+      margin-left: 10px;
+      margin-top: 10px;
+    }
+
+    ::ng-deep .mat-icon {
+      background-repeat: no-repeat;
+      display: inline-block;
+      fill: currentColor;
+      height: 24px;
+      width: 24px;
+      // margin: 11px 0 5px 0;
+    }
+
+    .icon {
+      margin-top: 10px;
+    }
+
+    ::ng-deep .info {
+      width: 18%;
+      margin-left: 10px;
+    }
+
+    .type {
+      width: 40%;
+      height: 15px;
+      font-family: Poppins;
+      font-size: 10px;
+      margin: 14px 2px;
+    }
+
+    /deep/ .nfc {
+      margin: 5px 10px 0px;
+    }
+
+    .count {
+      font-size: 10px;
+      font-family: poppins;
+      color: #706f73;
+      margin: 5px 10px 0px;
+    }
+
+    .run {
+      width: 48.7px;
+      height: 19.3px;
+      border-radius: 5px;
+      border: solid 1px #3ec042;
+      background-color: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      float: left;
+      cursor: pointer;
+
+      .runtext {
+        font-family: poppins;
+        font-size: 10px;
+        color: #3ec042;
+        text-align: center;
+      }
+
+      .playIcon {
+        height: 16px;
+        width: 16px;
+        font-size: 16px;
+        color: #3ec042;
+      }
     }
   }
-}
 
 }
 
@@ -269,23 +299,25 @@ h1.example-app-name {
 @media screen and (max-width: 1200px) {
   .fontFamily {
     font-weight: normal;
-    font-size: 12px;
+    font-size: $_subtext_font_size;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .width{
+  .width {
     width: 100%;
 
     .cardItem {
-    width: 100%;
+      width: 100%;
     }
   }
-  .content{
+
+  .content {
     padding: 20px 10px 10px 10px;
-    .sort{
+
+    .sort {
       padding: 20px 5px;
     }
   }
- 
+
 }

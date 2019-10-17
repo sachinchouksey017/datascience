@@ -1,0 +1,45 @@
+<app-header [wholeHeader]=true></app-header>
+<div class="firstDiv" fxLayout="column" fxLayoutAlign="space-around center" >
+  <h1 class="sameCss margin_off Head">Let's Connect</h1>
+  <h2 class="sameCss margin_off Sub_Head">We'd love to help you start exceeding your CX goals.</h2>
+</div>
+<div class="secondDiv" fxLayout='row' fxLayoutAlign='space-around start' fxLayout.xs='column' fxLayoutAlign.xs='space-around center'>
+  <div class="form" fxFlex='30' fxFlex.sm='40' fxFlex.xs='100'  fxLayout="column" fxLayoutAlign="space-around start">
+    <h3>Send us a message</h3>
+    <div style="width: 100%" fxLayout="row" fxLayoutAlign="space-between center" >
+      <mat-form-field fxFlex='45' appearance="outline" class="matArea">
+        <mat-label>First Name</mat-label>
+        <input matInput placeholder="First Name"   />
+        <!-- <mat-error fxFlex *ngIf="!submitForm.controls['problem_name'].valid && submitForm.controls['problem_name'].touched">
+          {{ getErrorMessage('problem_name', 'Problem Name') }} </mat-error> -->
+      </mat-form-field>
+      <mat-form-field fxFlex='45' appearance="outline" class="matArea">
+        <mat-label>Last Name</mat-label>
+        <input matInput placeholder="Last Name"   />
+        <!-- <mat-error fxFlex *ngIf="!submitForm.controls['problem_name'].valid && submitForm.controls['problem_name'].touched">
+          {{ getErrorMessage('problem_name', 'Problem Name') }} </mat-error> -->
+      </mat-form-field>
+    </div>
+    <mat-form-field style="width: 100%" fxFlex='100' appearance="outline" class="matArea">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Email"   />
+      <!-- <mat-error fxFlex *ngIf="!submitForm.controls['problem_name'].valid && submitForm.controls['problem_name'].touched">
+        {{ getErrorMessage('problem_name', 'Problem Name') }} </mat-error> -->
+    </mat-form-field>
+    <mat-form-field style="width: 100%" fxFlex='100' appearance="outline" class="matAra">
+      <mat-label>Message</mat-label>
+      <textarea matInput placeholder="Message" style="resize:none"></textarea>
+      <!-- <mat-error fxFlex *ngIf="!submitForm.controls['problem_name'].valid && submitForm.controls['problem_name'].touched">
+        {{ getErrorMessage('problem_name', 'Problem Name') }} </mat-error> -->
+    </mat-form-field>
+    <button class="sendButton" mat-stroked-button>Send</button>
+
+  </div >
+  <div  class="map" fxLayout='column'>
+    <img src="../../../assets/images/aboutMap.png" alt="aboutMap">
+  <h5 class="address">Two Logan square <br> suite #845 <br> Philam,dd, PA400123</h5>
+  <h5 class="contact address margin_off">info@mail.com</h5>
+  <h5 class="contact address margin_off">(022)895-1230</h5>
+  </div>
+</div>
+<app-footer></app-footer>

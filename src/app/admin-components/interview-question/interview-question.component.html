@@ -1,0 +1,86 @@
+<div class="datasetsMain">
+    <div style="padding: .8em 0;" fxLayout='row' fxLayoutAlign='space-between center'>
+      <div class="intancesText">
+          Interview Questions
+      </div>
+      <button fxFlexOffset='10px' class="addButton" (click)='addResourceDialog()' mat-stroked-button>
+        <mat-icon>add</mat-icon> Add Question
+      </button>
+    </div>
+    <div style="background-color: white;" fxLayout fxLayoutAlign='start center'>
+      <div class="search-div" fxFlex='30' fxFlex.md='40' fxFlex.sm='50'>
+        <mat-icon class="search-icon">search</mat-icon>
+        <input fxFlex class="search" matInput placeholder="Search" [(ngModel)]="Search" (keyup)="lookUp()"
+          autocomplete="off">
+        <button mat-icon-button aria-label="Example icon-button with a heart icon">
+          <mat-icon class='filterIcon'>filter_list</mat-icon>
+        </button>
+  
+      </div>
+      <div fxFlexOffset='10px' fxFlex fxLayout='row' fxLayoutGap='5px'>
+        <button class="catagoryButtonSelect" mat-stroked-button>Cat1</button>
+        <button class="catagoryButtonNotSelect" mat-stroked-button>Cat2</button>
+        <button class="catagoryButtonNotSelect" mat-stroked-button>Cat3</button>
+        <button class="catagoryButtonNotSelect" mat-stroked-button>Cat4</button>
+        <button class="catagoryButtonNotSelect" mat-stroked-button>Cat5</button>
+      </div>
+  
+    </div>
+    <div class="tableMain">
+      <table mat-table [dataSource]="dataSource">
+        <!-- Checkbox Column -->
+        <ng-container matColumnDef="select">
+          <th mat-header-cell *matHeaderCellDef>
+            <mat-checkbox (change)="$event ? masterToggle() : null" [checked]="selection.hasValue() && isAllSelected()"
+              [indeterminate]="selection.hasValue() && !isAllSelected()" [aria-label]="checkboxLabel()">
+            </mat-checkbox>
+          </th>
+          <td mat-cell *matCellDef="let row ; let i = index;">
+            <mat-checkbox (click)="$event.stopPropagation()" (change)="$event ? selection.toggle(row) : null"
+              [checked]="selection.isSelected(row)" [aria-label]="checkboxLabel(row,i)">
+            </mat-checkbox>
+          </td>
+        </ng-container>
+        <!-- Position Column -->
+        <ng-container matColumnDef="question">
+          <th mat-header-cell *matHeaderCellDef> Question </th>
+          <td mat-cell *matCellDef="let element ; let i = index;"> {{element.name}} </td>
+        </ng-container>
+  
+      
+  
+  
+        <!-- Star Column -->
+        <ng-container matColumnDef="star" stickyEnd>
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+  
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item>
+                <mat-icon class="circle">check_circle</mat-icon> Edit
+              </button>
+              <button mat-menu-item>
+                <mat-icon class="circle"></mat-icon> Trash
+              </button>
+              <button mat-menu-item>
+                <mat-icon class="circle"></mat-icon>Archive
+              </button>
+              <button mat-menu-item>
+                <mat-icon class="circle"></mat-icon>Draft
+              </button>
+  
+            </mat-menu>
+          </td>
+  
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky: true"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+  
+    </div>
+  
+  </div>

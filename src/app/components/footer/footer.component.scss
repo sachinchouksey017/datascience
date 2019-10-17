@@ -1,0 +1,44 @@
+$_heading_font_size:18px;
+$_cardheading_font_size:16px;
+$_inputbox_font_size:14px;
+$_subtext_font_size:12px;
+$_tableheading_font_size:10px;
+$_heading_font_weight:600;
+$_button_font_weight:400;
+$_button_border_radius:none;
+$_heading_border_radius:10px;
+$font_family:Lato;
+
+.marginOff {
+  // margin: 0;
+}
+
+.footerText {
+  color: #303030;
+  font-size: $_subtext_font_size;
+  font-family: Poppins;
+}
+
+.footerFirstText {
+  padding: 20px 0px;
+  background-color: #E4E4E4;
+
+  .subscribeButton {
+    background-color: #2851A3;
+    color: white;
+    border-radius: 20px;
+    padding: 0 35px;
+  }
+}
+
+.lastText {
+  background-color: #C9C9C9;
+
+  .privacyText {
+    color: #303030;
+    font-size: $_subtext_font_size;
+    font-family: Poppins;
+    font-weight: 100;
+
+  }
+}

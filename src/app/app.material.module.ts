@@ -39,7 +39,6 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
     ReactiveFormsModule,
     MatButtonModule,
     MatCardModule,
-    MatDialogModule,
     MatIconModule,
     MatInputModule,
     MatSnackBarModule,
