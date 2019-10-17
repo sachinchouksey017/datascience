@@ -72,11 +72,12 @@ const routes: Routes = [
     ]
 
   }, {
-    path: 'contact-us',
-    component: ContactUsComponent
-  }, {
     path: 'about-us',
     component: AboutUsComponent
+  }
+  , {
+    path: 'contact-us',
+    component: ContactUsComponent
   }
 ];
 
