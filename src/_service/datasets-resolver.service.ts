@@ -11,8 +11,8 @@ export class DatasetsResolverService implements Resolve<any[]> {
     constructor(private http: HttpClient) {
     }
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<any> | Observable<never> {
-        // const url = 'http://5d96dfa09937f40014b6826f.mockapi.io/datasets';
-        const url = 'http://13.126.201.76:8000/datasets/'
+        const url = 'http://5d96dfa09937f40014b6826f.mockapi.io/datasets';
+        // const url = 'http://13.126.201.76:8000/datasets/'
         const httpOptions = {
             headers: new HttpHeaders({
                 'content-Type': 'application/json',
